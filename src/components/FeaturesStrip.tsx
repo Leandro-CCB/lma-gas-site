@@ -19,9 +19,9 @@ export const FeaturesStrip: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="bg-white p-5 rounded-xl border border-slate-200 shadow-xs flex items-start gap-3.5 transition-all hover:border-emerald-300"
+                className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs flex items-start gap-3.5 transition-all hover:border-emerald-300 hover:shadow-sm"
               >
-                <div className="size-10 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0 font-bold">
+                <div className="size-11 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0 font-bold border border-emerald-100">
                   <IconComponent className="size-5" />
                 </div>
                 <div>

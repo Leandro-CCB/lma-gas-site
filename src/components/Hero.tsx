@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, CheckCircle2, Play, Sparkles } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Play, Sparkles, Star } from 'lucide-react';
 import { HERO_DATA } from '../data/content';
 
 interface HeroProps {
@@ -19,9 +19,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
               <span>{HERO_DATA.badge}</span>
             </div>
 
-            {/* Título Principal */}
+            {/* Título Principal em 3 Linhas Conforme Referência */}
             <h1 className="text-3xl sm:text-5xl lg:text-5xl font-black text-[#0d1b2e] tracking-tight leading-[1.15]">
-              {HERO_DATA.headline}
+              Sua revenda de gás <br className="hidden sm:inline" />
+              <span className="text-emerald-600">mais organizada,</span> <br className="hidden sm:inline" />
+              do pedido à entrega.
             </h1>
 
             {/* Descrição Direta ao Ponto */}
@@ -35,8 +37,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                 onClick={onOpenTrial}
                 className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-extrabold text-sm sm:text-base shadow-sm hover:shadow transition-all cursor-pointer"
               >
-                <Sparkles className="size-4 text-emerald-200" />
-                Testar 7 Dias Grátis
+                <span>Testar grátis por 7 dias</span>
                 <ArrowRight className="size-4" />
               </button>
 
@@ -45,7 +46,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                 className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl border border-slate-300 hover:border-slate-400 bg-white hover:bg-slate-50 text-slate-700 font-bold text-sm sm:text-base transition-colors"
               >
                 <Play className="size-4 text-slate-500 fill-slate-500" />
-                Ver Demonstração
+                <span>Ver demonstração</span>
               </a>
             </div>
 
@@ -60,23 +61,35 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
             </div>
           </div>
 
-          {/* Lado Direito: Fotografia Real de Revenda de Gás e Entregador */}
+          {/* Lado Direito: Fotografia Real de Revenda de Gás e Entregador com Botijão */}
           <div className="lg:col-span-6 flex justify-center">
             <div className="relative w-full max-w-lg">
-              {/* Moldura da Fotografia com Botijão de Gás e Entregador */}
+              {/* Moldura da Fotografia Real */}
               <div className="relative rounded-2xl overflow-hidden shadow-md border border-slate-200 bg-slate-50 aspect-[4/3] sm:aspect-[16/11]">
                 <img
                   src="/images/entregador-botijao.jpg"
-                  alt="Entregador uniformizado com botijão de gás para entrega"
+                  alt="Entregador uniformizado realizando a entrega de botijão de gás na residência do cliente"
                   className="w-full h-full object-cover object-top"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-4 left-4 right-4 text-white text-xs sm:text-sm font-medium drop-shadow-md">
                   Entrega de botijão de gás organizada e atendimento rápido na porta do cliente.
                 </div>
               </div>
 
-              {/* Card Flutuante de Indicador Confiável */}
+              {/* Pill Flutuante de Avaliação / Clientes Satisfeitos (Conforme Imagem de Referência) */}
+              <div className="absolute -top-4 -right-2 sm:-right-4 bg-white px-4 py-2.5 rounded-xl border border-slate-200 shadow-lg flex items-center gap-2.5">
+                <div className="flex text-amber-400">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="size-3.5 fill-amber-400" />
+                  ))}
+                </div>
+                <div className="text-xs font-bold text-slate-800">
+                  +500 <span className="font-normal text-slate-500">revendas organizadas</span>
+                </div>
+              </div>
+
+              {/* Card Flutuante Inferior */}
               <div className="absolute -bottom-4 -left-3 sm:-left-6 bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200 shadow-lg flex items-center gap-3">
                 <div className="size-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
                   ✓

@@ -5,7 +5,7 @@ export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Ol%C3%A1!%20
 export const HERO_DATA = {
   badge: "Sistema para Revendas de Gás",
   headline: "Sua revenda de gás mais organizada, do pedido à entrega.",
-  description: "Controle vendas, entregas, estoque e clientes em um só lugar. Simples de usar, direto ao ponto.",
+  description: "Controle seus pedidos, clientes, estoque e entregas em um só sistema. Simples, prático e feito para o dia a dia da sua revenda.",
   benefits: [
     "Sem cartão de crédito",
     "Sem fidelidade",
@@ -17,22 +17,22 @@ export const CORE_FEATURES = [
   {
     iconName: "ShoppingCart",
     title: "Vendas e Pedidos",
-    description: "Registre pedidos e acompanhe as vendas no balcão e delivery."
+    description: "Registre pedidos no balcão ou entrega em poucos cliques com cálculo automático."
   },
   {
     iconName: "Truck",
     title: "Entregas",
-    description: "Acompanhe as entregas e organize a operação dos entregadores."
+    description: "Acompanhe entregas em tempo real, organize entregadores e reduza atrasos."
   },
   {
     iconName: "Package",
     title: "Estoque",
-    description: "Controle botijões cheios e vazios, água e outros produtos."
+    description: "Controle de botijões cheios e vazios (P13, P20, P45) e galões de água com alerta de mínimo."
   },
   {
     iconName: "Users",
     title: "Clientes",
-    description: "Organize o cadastro, histórico de compras e clientes inativos."
+    description: "Cadastro rápido, histórico de compras e alerta de clientes sem comprar há mais de 60 dias."
   }
 ];
 
@@ -47,21 +47,48 @@ export const DISTRIBUIDORAS = [
   { name: 'Multimarcas', color: '#475569', bg: '#f8fafc', border: '#e2e8f0' },
 ];
 
+export const SYSTEM_BENEFITS = [
+  {
+    title: "Funciona no computador e no celular",
+    desc: "100% em nuvem. Acesse do computador da loja, tablet ou smartphone sem precisar instalar nada."
+  },
+  {
+    title: "Frente de Caixa (PDV rápido de 10 segundos)",
+    desc: "Venda no balcão ou delivery, identificação de cliente por telefone, formas de pagamento e impressão térmica."
+  },
+  {
+    title: "Organiza pedidos, entregas e estoque",
+    desc: "Painel visual de entregas com status: Pendentes, Em Rota e Entregues, sem fichas de papel perdidas."
+  },
+  {
+    title: "Alerta de clientes sem comprar há +60 dias",
+    desc: "Filtro automático de clientes inativos para você mandar mensagem no WhatsApp antes que comprem de outro."
+  },
+  {
+    title: "Controle rígido de botijões cheios e vazios",
+    desc: "Saiba exatamente quantos vasilhames você tem no depósito e quando precisa pedir nova carga de gás."
+  },
+  {
+    title: "Fechamento cego de caixa por turno",
+    desc: "Conferência cega de dinheiro, Pix e cartões no encerramento de turno, eliminando divergências."
+  }
+];
+
 export const PLANS = [
   {
     id: "basico",
     name: "Plano Básico",
-    description: "Gestão completa para a operação diária da sua revenda de gás.",
+    subtitle: "Ideal para pequenas revendas que querem organizar sua operação.",
     price: "49,99",
     highlighted: false,
     features: [
       "Gestão de vendas e pedidos (balcão e entrega)",
       "Cadastro e busca rápida de clientes",
-      "Alerta de clientes inativos (+60 e +90 dias sem comprar)",
+      "Alerta de clientes inativos (+60 e +90 dias)",
       "Controle de estoque de botijões (cheios e vazios)",
       "Fechamento cego de caixa por turno",
-      "Relatórios de movimentação e vendas",
-      "Acesso seguro pelo computador e celular",
+      "Relatórios simples e objetivos",
+      "Acesso no computador e celular",
       "Suporte por WhatsApp"
     ],
     cta: "Testar 7 Dias Grátis"
@@ -70,13 +97,13 @@ export const PLANS = [
     id: "pro",
     name: "Plano Pro",
     badge: "MAIS ESCOLHIDO",
-    description: "Tudo do Plano Básico + Cardápio Digital e Aplicativo do Entregador.",
+    subtitle: "Mais recursos e controle para uma operação mais eficiente.",
     price: "99,99",
     highlighted: true,
     features: [
       "Tudo incluído no Plano Básico",
       "Cardápio Digital próprio (pedidos online sem taxas)",
-      "Aplicativo do Entregador (rotas no Waze/Maps e baixa de pedidos no celular)"
+      "Aplicativo do Entregador (rotas no Waze/Maps e baixa pelo celular)"
     ],
     cta: "Testar 7 Dias Grátis"
   }
@@ -84,46 +111,46 @@ export const PLANS = [
 
 export const TRUST_POINTS = [
   {
-    title: "7 Dias de Teste Grátis",
-    desc: "Acesso total aos recursos para testar na rotina real da sua revenda."
+    title: "7 dias de teste grátis",
+    desc: "Teste o sistema sem compromisso na sua revenda."
   },
   {
-    title: "Sem Cartão de Crédito",
-    desc: "Cadastre-se e comece a usar imediatamente sem informar dados de pagamento."
+    title: "Sem cartão de crédito",
+    desc: "Você só paga se quiser continuar após os 7 dias."
   },
   {
-    title: "Sem Fidelidade",
-    desc: "Assinatura mensal flexível. Cancele ou altere seu plano quando desejar."
+    title: "Sem fidelidade",
+    desc: "Cancele ou altere seu plano quando desejar."
   },
   {
-    title: "Suporte em Português",
-    desc: "Atendimento direto pelo WhatsApp com quem entende da operação de revenda."
+    title: "Suporte em português",
+    desc: "Ajuda rápida sempre que precisar direto pelo WhatsApp."
   }
 ];
 
 export const FAQS = [
   {
-    q: "Qual a diferença entre o Plano Básico e o Plano Pro?",
-    a: "O Plano Básico (R$ 49,99/mês) conta com a gestão completa da revenda: vendas, clientes, alerta de clientes inativos, estoque de botijões, caixa e relatórios. O Plano Pro (R$ 99,99/mês) inclui tudo isso e adiciona exclusivamente o Cardápio Digital próprio (para pedidos online sem taxas) e o Aplicativo do Entregador (com rotas no Waze/Maps e baixa de pedidos no celular)."
+    q: "Qual a diferença exata entre o Plano Básico e o Plano Pro?",
+    a: "O Plano Básico (R$ 49,99/mês) inclui toda a gestão essencial: vendas, clientes, alerta de inativos (+60d), estoque de botijões cheios/vazios, fechamento de caixa e relatórios. O Plano Pro (R$ 99,99/mês) inclui tudo isso e difere exclusivamente por adicionar o Cardápio Digital próprio (pedidos online sem taxas) e o Aplicativo do Entregador (rotas no Waze/Maps e baixa de pedidos no celular)."
   },
   {
     q: "Como funciona o teste gratuito de 7 dias?",
-    a: "Você preenche os dados da sua revenda e recebe acesso imediato a todas as funcionalidades do sistema para testar por 7 dias. Não é necessário cartão de crédito."
+    a: "Você preenche os dados da sua revenda e recebe acesso imediato a todas as funcionalidades do sistema para testar por 7 dias. Não pedimos cartão de crédito."
   },
   {
-    q: "O que é o alerta de clientes inativos?",
-    a: "É uma ferramenta que filtra automaticamente os clientes cadastrados que estão sem realizar compras há mais de 60 ou 90 dias, permitindo que você envie uma mensagem rápida no WhatsApp para reconquistá-los."
+    q: "Como o alerta de clientes inativos me ajuda a vender mais?",
+    a: "O sistema filtra automaticamente os clientes cadastrados que estão sem comprar gás há mais de 60 ou 90 dias. Com um clique você abre o WhatsApp com mensagem pronta para reativar o cliente antes que ele compre do concorrente."
   },
   {
-    q: "Como os entregadores usam o aplicativo no Plano Pro?",
-    a: "O aplicativo do entregador funciona diretamente no navegador do celular (Android e iOS). Basta acessar o link e digitar o código de 6 dígitos gerado no painel da revenda para ver os pedidos e abrir as rotas no Waze ou Google Maps."
+    q: "Como o entregador usa o aplicativo no celular?",
+    a: "O entregador acessa pelo próprio navegador do smartphone (Android ou iPhone) usando um código de 6 dígitos gerado pela revenda. Ele visualiza o endereço, abre a rota com 1 toque no Waze ou Google Maps e dá baixa na entrega na hora."
   },
   {
-    q: "O cardápio digital do Plano Pro cobra comissão por pedido?",
-    a: "Não. O cardápio digital é próprio da sua revenda e não cobra nenhuma porcentagem sobre suas vendas. Todo o valor do pedido vai direto para você."
+    q: "O cardápio digital cobra alguma comissão por pedido?",
+    a: "Zero comissões. Ao contrário do iFood ou outros marketplaces que cobram de 12% a 27%, o Cardápio Digital do LMA Gás é 100% da sua revenda. Todo o valor das vendas fica com você."
   },
   {
-    q: "O sistema funciona em qualquer computador?",
-    a: "Sim. O LMA Gás é 100% em nuvem e funciona em computadores, notebooks, tablets e celulares com acesso à internet, sem necessidade de instalações pesadas."
+    q: "O sistema funciona em computador fraco ou apenas no celular?",
+    a: "Funciona perfeitamente em qualquer computador, notebook, tablet ou smartphone com internet, sem travamentos e sem precisar instalar nada."
   }
 ];
