@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { FeaturesStrip } from './components/FeaturesStrip';
@@ -15,6 +15,10 @@ export default function App() {
   const [trialModalOpen, setTrialModalOpen] = useState(false);
   const [privacyModalOpen, setPrivacyModalOpen] = useState(false);
   const [termsModalOpen, setTermsModalOpen] = useState(false);
+
+  useEffect(() => {
+    document.title = 'LMA Gás | Sistema de Gestão para Revendas de Gás';
+  }, []);
 
   const handleOpenTrial = () => setTrialModalOpen(true);
   const handleCloseTrial = () => setTrialModalOpen(false);
