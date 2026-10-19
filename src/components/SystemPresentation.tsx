@@ -35,68 +35,72 @@ export const SystemPresentation: React.FC<SystemPresentationProps> = ({ onOpenTr
           </p>
         </div>
 
-        {/* 4 Blocos Humanizados de Operação Real */}
+        {/* 4 Blocos com Imagens Reais de Revenda de Gás */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {/* 1. Depósito de Gás */}
           <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs group hover:border-emerald-300 transition-all">
             <div className="aspect-[16/10] overflow-hidden bg-slate-100">
               <img
-                src="/images/gestor-computador.jpg"
-                alt="Proprietário acompanhando as vendas da revenda"
+                src="/images/deposito-botijoes.jpg"
+                alt="Depósito de botijões de gás organizado em gaiolas"
                 className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
               />
             </div>
             <div className="p-4">
-              <h4 className="font-bold text-sm text-[#0d1b2e]">Controle Gerencial</h4>
+              <h4 className="font-bold text-sm text-[#0d1b2e]">Depósito de Botijões</h4>
               <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                Acompanhe o faturamento, vendas diárias e saldo do caixa de forma clara e objetiva.
+                Controle o saldo de botijões cheios e vazios no estoque da sua revenda com alerta de nível mínimo.
               </p>
             </div>
           </div>
 
+          {/* 2. Entregador de Gás com Botijão */}
           <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs group hover:border-emerald-300 transition-all">
             <div className="aspect-[16/10] overflow-hidden bg-slate-100">
               <img
-                src="/images/entrega-cliente.jpg"
-                alt="Entregador uniformizado atendendo cliente com botijão"
-                className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
+                src="/images/entregador-botijao.jpg"
+                alt="Entregador uniformizado carregando botijão de gás para entrega"
+                className="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-300"
               />
             </div>
             <div className="p-4">
-              <h4 className="font-bold text-sm text-[#0d1b2e]">Operação de Entregas</h4>
+              <h4 className="font-bold text-sm text-[#0d1b2e]">Entrega de Botijões</h4>
               <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                Despache pedidos rapidamente para os entregadores e acompanhe os status de entrega.
+                Despache botijões com rapidez para os entregadores e acompanhe os status das entregas.
               </p>
             </div>
           </div>
 
+          {/* 3. Fogão a Gás e Cozinha */}
           <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs group hover:border-emerald-300 transition-all">
             <div className="aspect-[16/10] overflow-hidden bg-slate-100">
               <img
-                src="/images/deposito-funcionario.jpg"
-                alt="Funcionário conferindo estoque de botijões na revenda"
+                src="/images/fogao-cozinha.jpg"
+                alt="Fogão a gás aceso com chama azul na cozinha do cliente"
                 className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
               />
             </div>
             <div className="p-4">
-              <h4 className="font-bold text-sm text-[#0d1b2e]">Controle de Estoque</h4>
+              <h4 className="font-bold text-sm text-[#0d1b2e]">Gás Sempre Aceso</h4>
               <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                Saiba a quantidade de botijões cheios e vazios e receba alertas de estoque mínimo.
+                Identifique clientes há mais de 60 dias sem comprar e ligue no momento exato antes de acabar o gás.
               </p>
             </div>
           </div>
 
+          {/* 4. Carga e Distribuição de Gás */}
           <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs group hover:border-emerald-300 transition-all">
             <div className="aspect-[16/10] overflow-hidden bg-slate-100">
               <img
-                src="/images/pedido-celular.jpg"
-                alt="Cliente fazendo pedido de gás pelo smartphone"
+                src="/images/entrega-caminhao-gas.jpg"
+                alt="Carga e transporte de botijões de gás para revenda"
                 className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
               />
             </div>
             <div className="p-4">
-              <h4 className="font-bold text-sm text-[#0d1b2e]">Pedidos Online</h4>
+              <h4 className="font-bold text-sm text-[#0d1b2e]">Carga &amp; Transporte</h4>
               <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                Cardápio digital próprio para seus clientes pedirem online sem cobrança de comissões.
+                Acompanhe as entradas de novas cargas de botijões e mantenha a operação rodando sem gargalos.
               </p>
             </div>
           </div>
@@ -160,7 +164,7 @@ export const SystemPresentation: React.FC<SystemPresentationProps> = ({ onOpenTr
                 </div>
 
                 <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-xs">
-                  <div className="font-bold text-slate-800 text-xs mb-2">Estoque por Produto</div>
+                  <div className="font-bold text-slate-800 text-xs mb-2">Estoque de Botijões por Tipo</div>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                     <div className="p-2 rounded bg-slate-50 border border-slate-200 flex justify-between items-center">
                       <span>Botijão P13</span>
@@ -202,7 +206,7 @@ export const SystemPresentation: React.FC<SystemPresentationProps> = ({ onOpenTr
 
                 <div className="p-3 rounded-xl bg-white border border-slate-200 flex justify-between items-center">
                   <div>
-                    <span className="font-bold text-slate-800">1x Botijão P13 (Ultragaz)</span>
+                    <span className="font-bold text-slate-800">1x Botijão P13 (GLP)</span>
                     <div className="text-[10px] text-slate-500">Estoque atual: 142 un</div>
                   </div>
                   <span className="font-black text-emerald-700 text-sm">R$ 115,00</span>

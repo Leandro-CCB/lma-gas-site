@@ -60,19 +60,19 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
             </div>
           </div>
 
-          {/* Lado Direito: Fotografia Humanizada */}
+          {/* Lado Direito: Fotografia Real de Revenda de Gás e Entregador */}
           <div className="lg:col-span-6 flex justify-center">
             <div className="relative w-full max-w-lg">
-              {/* Moldura da Fotografia com Cantos Arredondados Discretos e Sombra Suave */}
+              {/* Moldura da Fotografia com Botijão de Gás e Entregador */}
               <div className="relative rounded-2xl overflow-hidden shadow-md border border-slate-200 bg-slate-50 aspect-[4/3] sm:aspect-[16/11]">
                 <img
-                  src="/images/hero-entrega.jpg"
-                  alt="Entregador de gás atendendo cliente com cordialidade"
-                  className="w-full h-full object-cover"
+                  src="/images/entregador-botijao.jpg"
+                  alt="Entregador uniformizado com botijão de gás para entrega"
+                  className="w-full h-full object-cover object-top"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-4 left-4 right-4 text-white text-xs sm:text-sm font-medium drop-shadow-md">
-                  Atendimento ágil e entrega organizada na porta do cliente.
+                  Entrega de botijão de gás organizada e atendimento rápido na porta do cliente.
                 </div>
               </div>
 
@@ -83,7 +83,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                 </div>
                 <div>
                   <div className="text-xs font-bold text-slate-900">Do pedido à entrega</div>
-                  <div className="text-[11px] text-slate-500">Operação rápida e sem complicação</div>
+                  <div className="text-[11px] text-slate-500">Agilidade no balcão e no entregador</div>
                 </div>
               </div>
             </div>

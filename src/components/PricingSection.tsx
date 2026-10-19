@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, Sparkles, ArrowRight, ShieldCheck, Clock, CreditCard, Headphones } from 'lucide-react';
+import { Check, Sparkles, ArrowRight, ShieldCheck, Clock, CreditCard, Headphones, Plus } from 'lucide-react';
 import { PLANS, TRUST_POINTS } from '../data/content';
 
 interface PricingSectionProps {
@@ -19,7 +19,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenTrial }) =
             Escolha o plano ideal para a sua revenda
           </h2>
           <p className="mt-3 text-base text-slate-600">
-            Comece com 7 dias de teste gratuito, sem necessidade de cartão de crédito e sem contrato de fidelidade.
+            Simples e direto: o <strong>Plano Pro</strong> difere do <strong>Plano Básico</strong> por incluir o <strong>Cardápio Digital</strong> (pedidos online) e o <strong>Aplicativo do Entregador</strong>.
           </p>
         </div>
 
@@ -72,14 +72,30 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenTrial }) =
                   {/* Lista de Recursos */}
                   <div className="mt-6 space-y-3">
                     <div className="text-xs font-bold uppercase tracking-wider text-slate-700">
-                      O que está incluído:
+                      {isPro ? 'Recursos exclusivos do Pro:' : 'O que está incluído no Básico:'}
                     </div>
-                    {plan.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                        <Check className="size-4 text-emerald-600 shrink-0 mt-0.5" />
-                        <span>{feature}</span>
-                      </div>
-                    ))}
+
+                    {plan.features.map((feature, idx) => {
+                      const isExclusivePro = isPro && idx > 0;
+
+                      return (
+                        <div
+                          key={idx}
+                          className={`flex items-start gap-2.5 text-xs sm:text-sm ${
+                            isExclusivePro
+                              ? 'text-emerald-950 font-semibold bg-emerald-50/70 p-2.5 rounded-lg border border-emerald-200/80'
+                              : 'text-slate-700'
+                          }`}
+                        >
+                          {isExclusivePro ? (
+                            <Plus className="size-4 text-emerald-600 shrink-0 mt-0.5" />
+                          ) : (
+                            <Check className="size-4 text-emerald-600 shrink-0 mt-0.5" />
+                          )}
+                          <span>{feature}</span>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
 
@@ -106,7 +122,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenTrial }) =
           })}
         </div>
 
-        {/* ── 9. SEÇÃO DE CONFIANÇA ── */}
+        {/* ── SEÇÃO DE CONFIANÇA ── */}
         <div className="mt-16 pt-12 border-t border-slate-200 max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <h3 className="text-base font-bold text-[#0d1b2e]">

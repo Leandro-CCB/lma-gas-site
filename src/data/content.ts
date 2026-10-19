@@ -51,14 +51,16 @@ export const PLANS = [
   {
     id: "basico",
     name: "Plano Básico",
-    description: "Tudo o que você precisa para começar a organizar sua revenda de gás.",
+    description: "Gestão completa para a operação diária da sua revenda de gás.",
     price: "49,99",
     highlighted: false,
     features: [
       "Gestão de vendas e pedidos (balcão e entrega)",
       "Cadastro e busca rápida de clientes",
-      "Controle de estoque de botijões e água com alerta de mínimo",
-      "Relatórios básicos de movimentação",
+      "Alerta de clientes inativos (+60 e +90 dias sem comprar)",
+      "Controle de estoque de botijões (cheios e vazios)",
+      "Fechamento cego de caixa por turno",
+      "Relatórios de movimentação e vendas",
       "Acesso seguro pelo computador e celular",
       "Suporte por WhatsApp"
     ],
@@ -68,17 +70,13 @@ export const PLANS = [
     id: "pro",
     name: "Plano Pro",
     badge: "MAIS ESCOLHIDO",
-    description: "Mais recursos e controle para uma operação mais eficiente.",
+    description: "Tudo do Plano Básico + Cardápio Digital e Aplicativo do Entregador.",
     price: "99,99",
     highlighted: true,
     features: [
       "Tudo incluído no Plano Básico",
-      "Aplicativo do Entregador com rotas no Waze e Google Maps",
-      "Cardápio Digital próprio sem taxas por pedido",
-      "Alerta de clientes inativos (+60 e +90 dias sem comprar)",
-      "Fechamento cego de caixa por turno com conferência",
-      "Relatórios gerenciais completos e exportação",
-      "Suporte prioritário por WhatsApp"
+      "Cardápio Digital próprio (pedidos online sem taxas)",
+      "Aplicativo do Entregador (rotas no Waze/Maps e baixa de pedidos no celular)"
     ],
     cta: "Testar 7 Dias Grátis"
   }
@@ -105,6 +103,10 @@ export const TRUST_POINTS = [
 
 export const FAQS = [
   {
+    q: "Qual a diferença entre o Plano Básico e o Plano Pro?",
+    a: "O Plano Básico (R$ 49,99/mês) conta com a gestão completa da revenda: vendas, clientes, alerta de clientes inativos, estoque de botijões, caixa e relatórios. O Plano Pro (R$ 99,99/mês) inclui tudo isso e adiciona exclusivamente o Cardápio Digital próprio (para pedidos online sem taxas) e o Aplicativo do Entregador (com rotas no Waze/Maps e baixa de pedidos no celular)."
+  },
+  {
     q: "Como funciona o teste gratuito de 7 dias?",
     a: "Você preenche os dados da sua revenda e recebe acesso imediato a todas as funcionalidades do sistema para testar por 7 dias. Não é necessário cartão de crédito."
   },
@@ -113,19 +115,15 @@ export const FAQS = [
     a: "É uma ferramenta que filtra automaticamente os clientes cadastrados que estão sem realizar compras há mais de 60 ou 90 dias, permitindo que você envie uma mensagem rápida no WhatsApp para reconquistá-los."
   },
   {
-    q: "Como os entregadores usam o aplicativo?",
+    q: "Como os entregadores usam o aplicativo no Plano Pro?",
     a: "O aplicativo do entregador funciona diretamente no navegador do celular (Android e iOS). Basta acessar o link e digitar o código de 6 dígitos gerado no painel da revenda para ver os pedidos e abrir as rotas no Waze ou Google Maps."
   },
   {
-    q: "O cardápio digital cobra comissão por pedido?",
+    q: "O cardápio digital do Plano Pro cobra comissão por pedido?",
     a: "Não. O cardápio digital é próprio da sua revenda e não cobra nenhuma porcentagem sobre suas vendas. Todo o valor do pedido vai direto para você."
   },
   {
     q: "O sistema funciona em qualquer computador?",
     a: "Sim. O LMA Gás é 100% em nuvem e funciona em computadores, notebooks, tablets e celulares com acesso à internet, sem necessidade de instalações pesadas."
-  },
-  {
-    q: "É compatível com impressora térmica de bobina?",
-    a: "Sim, o sistema gera comprovantes de venda formatados para impressoras térmicas padrão de 58mm e 80mm."
   }
 ];
