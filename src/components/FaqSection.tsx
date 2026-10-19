@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { FAQS } from '../data/content';
-import { ChevronDown, HelpCircle, PhoneCall } from 'lucide-react';
+import { FAQS, WHATSAPP_LINK } from '../data/content';
+import { ChevronDown, HelpCircle, MessageSquare } from 'lucide-react';
 
 export const FaqSection: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -67,12 +67,12 @@ export const FaqSection: React.FC = () => {
             </div>
           </div>
           <a
-            href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20LMA%20G%C3%A1s%20para%20minha%20revenda."
+            href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center gap-2 whitespace-nowrap transition-colors"
           >
-            <PhoneCall className="size-4" />
+            <MessageSquare className="size-4" />
             Chamar no WhatsApp
           </a>
         </div>

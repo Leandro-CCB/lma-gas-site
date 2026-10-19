@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { X, Sparkles, CheckCircle2, ArrowRight, ShieldCheck, PhoneCall } from 'lucide-react';
+import { X, Sparkles, CheckCircle2, ArrowRight, ShieldCheck, MessageSquare } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { WHATSAPP_NUMBER } from '../data/content';
 
 interface FreeTrialModalProps {
   isOpen: boolean;
@@ -23,7 +24,7 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({ isOpen, onClose 
 
     try {
       confetti({
-        particleCount: 80,
+        particleCount: 70,
         spread: 60,
         origin: { y: 0.6 },
       });
@@ -41,16 +42,15 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({ isOpen, onClose 
 
   const handleOpenWhatsApp = () => {
     const msg = encodeURIComponent(
-      `Olá! Meu nome é ${nome}, da revenda ${revenda || 'de Gás'} em ${cidade || 'Brasil'}. Gostaria de ativar meu teste gratuito de 7 dias do LMA Gás (Bandeira: ${bandeira})!`
+      `Olá! Meu nome é ${nome}, da revenda ${revenda || 'de Gás'} em ${cidade || 'Brasil'}. Gostaria de ativar meu teste gratuito de 7 dias do LMA Gás (Distribuidora: ${bandeira})!`
     );
-    window.open(`https://wa.me/5511999999999?text=${msg}`, '_blank');
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, '_blank');
     onClose();
   };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs animate-fade-in">
       <div className="relative w-full max-w-lg rounded-2xl bg-white border border-slate-200 shadow-2xl p-6 sm:p-8 text-slate-800">
-        {/* Botão Fechar */}
         <button
           onClick={onClose}
           className="absolute top-5 right-5 p-1.5 rounded-full bg-slate-100 text-slate-500 hover:text-slate-800 hover:bg-slate-200 transition-colors cursor-pointer"
@@ -60,24 +60,22 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({ isOpen, onClose 
 
         {!submitted ? (
           <div>
-            {/* Header com Logo Oficial da LMA */}
             <div className="flex items-center gap-3 mb-2">
-              <img src="/logo-lma.png" alt="LMA GÁS" className="h-10 w-auto object-contain" />
+              <img src="/logo-lma.png" alt="LMA Gás" className="h-10 w-auto object-contain" />
               <div>
                 <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
                   7 Dias Grátis • Sem Cartão
                 </span>
                 <h3 className="text-xl sm:text-2xl font-black text-[#0d1b2e] mt-1">
-                  Iniciar Teste do LMA GÁS
+                  Iniciar Teste do LMA Gás
                 </h3>
               </div>
             </div>
 
             <p className="text-xs sm:text-sm text-slate-600 mt-2 mb-5">
-              Preencha os dados da sua revenda para liberar o seu acesso de demonstração.
+              Preencha os dados da sua revenda para liberar o seu acesso de teste.
             </p>
 
-            {/* Formulário */}
             <form onSubmit={handleSubmit} className="space-y-3.5 text-xs sm:text-sm">
               <div>
                 <label className="block text-slate-700 font-semibold mb-1">
@@ -175,7 +173,6 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({ isOpen, onClose 
             </form>
           </div>
         ) : (
-          /* Sucesso */
           <div className="text-center py-4 space-y-4 animate-fade-in">
             <div className="size-14 rounded-full bg-emerald-100 text-emerald-600 mx-auto flex items-center justify-center text-2xl font-bold">
               ✓
@@ -193,15 +190,15 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({ isOpen, onClose 
             <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-left space-y-2">
               <div className="flex items-center gap-2 font-bold text-emerald-700">
                 <CheckCircle2 className="size-4 shrink-0" />
-                <span>Ambiente de demonstração disponível</span>
+                <span>Ambiente de demonstração liberado</span>
               </div>
               <div className="flex items-center gap-2 font-bold text-blue-700">
                 <CheckCircle2 className="size-4 shrink-0" />
-                <span>Aplicativo do Entregador com rotas ativo</span>
+                <span>Aplicativo do Entregador com rotas</span>
               </div>
               <div className="flex items-center gap-2 font-bold text-amber-700">
                 <CheckCircle2 className="size-4 shrink-0" />
-                <span>Cardápio digital próprio configurado para {bandeira}</span>
+                <span>Cardápio digital próprio para {bandeira}</span>
               </div>
             </div>
 
@@ -218,7 +215,7 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({ isOpen, onClose 
                 onClick={handleOpenWhatsApp}
                 className="w-full py-3 rounded-xl border border-slate-300 hover:bg-slate-50 text-slate-700 font-bold text-xs flex items-center justify-center gap-2 transition-all cursor-pointer"
               >
-                <PhoneCall className="size-4 text-emerald-600" />
+                <MessageSquare className="size-4 text-emerald-600" />
                 Falar com consultor no WhatsApp
               </button>
             </div>
