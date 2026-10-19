@@ -65,19 +65,18 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
             </div>
           </div>
 
-          {/* Lado Direito: Ilustração de Entregador Deixando o Gás para a Dona de Casa */}
+          {/* Lado Direito: Foto Real de Entregador Deixando o Gás para a Cliente */}
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
-              {/* Moldura da Ilustração com Fundo Suave */}
-              <div className="relative rounded-3xl bg-gradient-to-b from-emerald-50/60 via-slate-50 to-white p-4 border border-slate-200/80 shadow-md overflow-hidden">
+              <div className="relative rounded-3xl bg-slate-50 p-3 border border-slate-200 shadow-lg overflow-hidden">
                 <img
-                  src="/images/hero-entrega.svg"
-                  alt="Entregador uniformizado deixando o botijão de gás para a cliente na porta"
-                  className="w-full h-auto object-contain max-h-[380px] drop-shadow-sm"
+                  src="/images/hero-entrega-real.jpg"
+                  alt="Entregador uniformizado entregando botijão de gás para a cliente na residência"
+                  className="w-full h-auto object-cover rounded-2xl max-h-[380px]"
                 />
 
-                {/* Badges Flutuantes Conforme Referência */}
-                <div className="mt-3 grid grid-cols-3 gap-2 pt-2 border-t border-slate-200/60">
+                {/* Badges Flutuantes Informativos */}
+                <div className="mt-3 grid grid-cols-3 gap-2 pt-2 border-t border-slate-200">
                   <div className="bg-white p-2 rounded-xl border border-slate-200 text-center shadow-xs">
                     <Package className="size-4 text-emerald-600 mx-auto mb-1" />
                     <span className="block text-[11px] font-bold text-[#0d1b2e]">Mais Controle</span>

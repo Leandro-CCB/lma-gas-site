@@ -26,7 +26,7 @@ export const FeaturesStrip: React.FC = () => {
   ];
 
   return (
-    <section className="py-8 bg-[#f8fafc] border-y border-slate-200">
+    <section id="recursos" className="py-8 bg-[#f8fafc] border-y border-slate-200 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {items.map((item, idx) => {

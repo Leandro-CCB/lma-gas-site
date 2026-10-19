@@ -1,40 +1,6 @@
 export const WHATSAPP_NUMBER = "5511945440640";
 export const WHATSAPP_DISPLAY = "(11) 94544-0640";
-export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20sistema%20LMA%20G%C3%A1s.`;
-
-export const HERO_DATA = {
-  badge: "Sistema para Revendas de Gás",
-  headline: "Sua revenda de gás mais organizada, do pedido à entrega.",
-  description: "Controle seus pedidos, clientes, estoque e entregas em um só sistema. Simples, prático e feito para o dia a dia da sua revenda.",
-  benefits: [
-    "Sem cartão de crédito",
-    "Sem fidelidade",
-    "Suporte em português"
-  ]
-};
-
-export const CORE_FEATURES = [
-  {
-    iconName: "ShoppingCart",
-    title: "Vendas e Pedidos",
-    description: "Registre pedidos no balcão ou entrega em poucos cliques com cálculo automático."
-  },
-  {
-    iconName: "Truck",
-    title: "Entregas",
-    description: "Acompanhe entregas em tempo real, organize entregadores e reduza atrasos."
-  },
-  {
-    iconName: "Package",
-    title: "Estoque",
-    description: "Controle de botijões cheios e vazios (P13, P20, P45) e galões de água com alerta de mínimo."
-  },
-  {
-    iconName: "Users",
-    title: "Clientes",
-    description: "Cadastro rápido, histórico de compras e alerta de clientes sem comprar há mais de 60 dias."
-  }
-];
+export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20LMA%20G%C3%A1s%20para%20minha%20revenda.`;
 
 export const DISTRIBUIDORAS = [
   { name: 'Ultragaz', color: '#0284c7', bg: '#f0f9ff', border: '#bae6fd' },
@@ -47,29 +13,65 @@ export const DISTRIBUIDORAS = [
   { name: 'Multimarcas', color: '#475569', bg: '#f8fafc', border: '#e2e8f0' },
 ];
 
+export const HERO_DATA = {
+  badge: "Sistema para Revendas de Gás",
+  title: "Sua revenda de gás mais organizada, do pedido à entrega.",
+  description: "Controle vendas, entregas, estoque e clientes em um só lugar. Simples de usar, direto ao ponto.",
+  ctaPrimary: "Testar 7 Dias Grátis",
+  ctaSecondary: "Ver Demonstração",
+  benefits: [
+    "Sem cartão de crédito",
+    "Sem fidelidade",
+    "Suporte em português"
+  ]
+};
+
+export const CORE_FEATURES = [
+  {
+    icon: "ShoppingCart",
+    title: "Vendas e Pedidos",
+    description: "Registre vendas no balcão e delivery com rapidez."
+  },
+  {
+    icon: "Package",
+    title: "Estoque",
+    description: "Controle botijões cheios e vazios sem perder a conta."
+  },
+  {
+    icon: "Truck",
+    title: "Entregas",
+    description: "Acompanhe seus entregadores e agilize as rotas."
+  },
+  {
+    icon: "Users",
+    title: "Clientes",
+    description: "Histórico completo e alerta de clientes sem pedir há mais de 60 dias."
+  }
+];
+
 export const SYSTEM_BENEFITS = [
   {
-    title: "Funciona no computador e no celular",
-    desc: "100% em nuvem. Acesse do computador da loja, tablet ou smartphone sem precisar instalar nada."
+    title: "Funciona no computador e celular",
+    desc: "Acesse sua revenda de qualquer lugar, sem precisar instalar nada."
   },
   {
-    title: "Frente de Caixa (PDV rápido de 10 segundos)",
-    desc: "Venda no balcão ou delivery, identificação de cliente por telefone, formas de pagamento e impressão térmica."
+    title: "Frente de Caixa (PDV de 10 segundos)",
+    desc: "Cadastre vendas de balcão e delivery rapidamente e imprima comandas térmicas."
   },
   {
-    title: "Organiza pedidos, entregas e estoque",
-    desc: "Painel visual de entregas com status: Pendentes, Em Rota e Entregues, sem fichas de papel perdidas."
+    title: "Painel de Entregas com Waze e Maps",
+    desc: "Acompanhe pedidos em tempo real (Pendentes, Em Rota, Entregues) com rotas no celular."
   },
   {
-    title: "Alerta de clientes sem comprar há +60 dias",
-    desc: "Filtro automático de clientes inativos para você mandar mensagem no WhatsApp antes que comprem de outro."
+    title: "Clientes Inativos (+60 e +90 dias)",
+    desc: "Descubra quais clientes sumiram e envie mensagem no WhatsApp com 1 clique para não perder vendas."
   },
   {
-    title: "Controle rígido de botijões cheios e vazios",
-    desc: "Saiba exatamente quantos vasilhames você tem no depósito e quando precisa pedir nova carga de gás."
+    title: "Estoque de Botijões Cheios e Vazios",
+    desc: "Saldo em tempo real de P13, P20, P45 e Água 20L com alerta de reposição de carga."
   },
   {
-    title: "Fechamento cego de caixa por turno",
+    title: "Fechamento Cego de Caixa por Turno",
     desc: "Conferência cega de dinheiro, Pix e cartões no encerramento de turno, eliminando divergências."
   }
 ];
@@ -78,18 +80,21 @@ export const PLANS = [
   {
     id: "basico",
     name: "Plano Básico",
-    subtitle: "Ideal para pequenas revendas que querem organizar sua operação.",
+    subtitle: "Ideal para revendas que buscam controle total de vendas, caixa e estoque.",
     price: "49,99",
+    currency: "R$",
+    period: "/mês",
     highlighted: false,
+    savingsNote: "7 dias grátis • Sem cartão de crédito",
     features: [
-      "Gestão de vendas e pedidos (balcão e entrega)",
-      "Cadastro e busca rápida de clientes",
-      "Alerta de clientes inativos (+60 e +90 dias)",
-      "Controle de estoque de botijões (cheios e vazios)",
-      "Fechamento cego de caixa por turno",
-      "Relatórios simples e objetivos",
-      "Acesso no computador e celular",
-      "Suporte por WhatsApp"
+      { text: "Gestão completa de vendas (balcão e entrega)", highlight: false },
+      { text: "Cadastro de clientes e histórico de compras", highlight: false },
+      { text: "Alerta de clientes inativos (+60 e +90 dias sem comprar)", highlight: true },
+      { text: "Controle de estoque de botijões (cheios e vazios)", highlight: false },
+      { text: "Fechamento cego de caixa por turno", highlight: true },
+      { text: "Relatórios de vendas e faturamento", highlight: false },
+      { text: "Acesso no computador e no celular", highlight: false },
+      { text: "Suporte dedicado pelo WhatsApp", highlight: false }
     ],
     cta: "Testar 7 Dias Grátis"
   },
@@ -97,13 +102,16 @@ export const PLANS = [
     id: "pro",
     name: "Plano Pro",
     badge: "MAIS ESCOLHIDO",
-    subtitle: "Mais recursos e controle para uma operação mais eficiente.",
+    subtitle: "Tudo do Plano Básico + Cardápio Digital próprio e Aplicativo do Entregador.",
     price: "99,99",
+    currency: "R$",
+    period: "/mês",
     highlighted: true,
+    savingsNote: "7 dias grátis • Sem fidelidade",
     features: [
-      "Tudo incluído no Plano Básico",
-      "Cardápio Digital próprio (pedidos online sem taxas)",
-      "Aplicativo do Entregador (rotas no Waze/Maps e baixa pelo celular)"
+      { text: "Tudo incluído no Plano Básico", highlight: false },
+      { text: "Cardápio Digital próprio (pedidos online sem taxas)", highlight: true },
+      { text: "Aplicativo do Entregador (rotas no Waze/Maps e baixa pelo celular)", highlight: true }
     ],
     cta: "Testar 7 Dias Grátis"
   }
@@ -147,7 +155,7 @@ export const FAQS = [
   },
   {
     q: "O cardápio digital cobra alguma comissão por pedido?",
-    a: "Zero comissões. Ao contrário do iFood ou outros marketplaces que cobram de 12% a 27%, o Cardápio Digital do LMA Gás é 100% da sua revenda. Todo o valor das vendas fica com você."
+    a: "Zero comissões. Ao contrário de marketplaces que cobram comissões altas por venda, o Cardápio Digital do LMA Gás é 100% da sua revenda. Todo o valor das vendas fica com você."
   },
   {
     q: "O sistema funciona em computador fraco ou apenas no celular?",

@@ -7,10 +7,9 @@ import {
   Clock,
   CreditCard,
   Headphones,
-  Plus,
   MessageSquare,
 } from 'lucide-react';
-import { PLANS, TRUST_POINTS, WHATSAPP_LINK, WHATSAPP_DISPLAY } from '../data/content';
+import { PLANS, WHATSAPP_LINK, WHATSAPP_DISPLAY } from '../data/content';
 
 interface PricingProps {
   onOpenTrial: () => void;
@@ -18,7 +17,7 @@ interface PricingProps {
 
 export const PricingSection: React.FC<PricingProps> = ({ onOpenTrial }) => {
   return (
-    <section id="planos" className="py-16 sm:py-24 bg-[#f8fafc] border-t border-slate-200">
+    <section id="planos" className="py-16 sm:py-24 bg-[#f8fafc] border-t border-slate-200 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Cabeçalho da Seção de Planos Conforme Referência */}
         <div className="text-center max-w-3xl mx-auto mb-14">
@@ -102,88 +101,100 @@ export const PricingSection: React.FC<PricingProps> = ({ onOpenTrial }) => {
 
           {/* Lado Direito: Os 2 Planos Públicos (Básico R$ 49,99 e Pro R$ 99,99) */}
           <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-            {PLANS.map((plan) => (
-              <div
-                key={plan.id}
-                className={`relative bg-white rounded-2xl transition-all duration-300 flex flex-col justify-between p-6 ${
-                  plan.highlight
-                    ? 'border-2 border-emerald-600 shadow-md ring-4 ring-emerald-600/10'
-                    : 'border border-slate-200 shadow-xs hover:border-slate-300'
-                }`}
-              >
-                {/* Badge Destaque Mais Escolhido */}
-                {plan.highlight && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-emerald-700 text-white text-[10px] font-black uppercase tracking-wider py-1 px-3.5 rounded-full shadow-sm flex items-center gap-1">
-                    <Sparkles className="size-3 text-emerald-200" />
-                    <span>{plan.badge || 'Mais Escolhido'}</span>
-                  </div>
-                )}
-
-                <div>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <h3 className="text-lg font-black text-[#0d1b2e] tracking-tight">{plan.name}</h3>
-                      <p className="text-xs text-slate-500 mt-1 min-h-[32px] leading-relaxed">{plan.description}</p>
+            {PLANS.map((plan: any) => {
+              const isHighlight = Boolean(plan.highlighted || plan.highlight);
+              return (
+                <div
+                  key={plan.id}
+                  className={`relative bg-white rounded-2xl transition-all duration-300 flex flex-col justify-between p-6 ${
+                    isHighlight
+                      ? 'border-2 border-emerald-600 shadow-md ring-4 ring-emerald-600/10'
+                      : 'border border-slate-200 shadow-xs hover:border-slate-300'
+                  }`}
+                >
+                  {/* Badge Destaque Mais Escolhido */}
+                  {isHighlight && (
+                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-emerald-700 text-white text-[10px] font-black uppercase tracking-wider py-1 px-3.5 rounded-full shadow-sm flex items-center gap-1">
+                      <Sparkles className="size-3 text-emerald-200" />
+                      <span>{plan.badge || 'Mais Escolhido'}</span>
                     </div>
-                  </div>
+                  )}
 
-                  {/* Preço Mensal */}
-                  <div className="my-5 pb-5 border-b border-slate-100">
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-xs font-bold text-slate-500">{plan.currency}</span>
-                      <span className="text-3xl sm:text-4xl font-black text-[#0d1b2e] tracking-tight">
-                        {plan.price}
-                      </span>
-                      <span className="text-xs font-semibold text-slate-500">{plan.period}</span>
-                    </div>
-                    <span className="text-[11px] text-emerald-700 font-semibold block mt-1">
-                      {plan.savingsNote || '7 dias grátis • Sem cartão de crédito'}
-                    </span>
-                  </div>
-
-                  {/* Lista de Recursos com Inclusão Clara */}
-                  <div className="space-y-2.5 mb-6">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-2">
-                      {plan.id === 'pro' ? 'Diferenciais Exclusivos do Pro:' : 'O que está incluído no plano:'}
-                    </span>
-                    {plan.features.map((feature, fIdx) => (
-                      <div key={fIdx} className="flex items-start gap-2.5 text-xs text-slate-700">
-                        <div
-                          className={`size-4 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${
-                            feature.highlight
-                              ? 'bg-emerald-600 text-white'
-                              : 'bg-emerald-100 text-emerald-700'
-                          }`}
-                        >
-                          <Check className="size-2.5 stroke-[3]" />
-                        </div>
-                        <span className={feature.highlight ? 'font-bold text-[#0d1b2e]' : 'font-normal'}>
-                          {feature.text}
-                        </span>
+                  <div>
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <h3 className="text-lg font-black text-[#0d1b2e] tracking-tight">{plan.name}</h3>
+                        <p className="text-xs text-slate-500 mt-1 min-h-[32px] leading-relaxed">
+                          {plan.subtitle || plan.description}
+                        </p>
                       </div>
-                    ))}
+                    </div>
+
+                    {/* Preço Mensal */}
+                    <div className="my-5 pb-5 border-b border-slate-100">
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-xs font-bold text-slate-500">{plan.currency || 'R$'}</span>
+                        <span className="text-3xl sm:text-4xl font-black text-[#0d1b2e] tracking-tight">
+                          {plan.price}
+                        </span>
+                        <span className="text-xs font-semibold text-slate-500">{plan.period || '/mês'}</span>
+                      </div>
+                      <span className="text-[11px] text-emerald-700 font-semibold block mt-1">
+                        {plan.savingsNote || '7 dias grátis • Sem cartão de crédito'}
+                      </span>
+                    </div>
+
+                    {/* Lista de Recursos com Itens Visíveis e Ícones Verdes */}
+                    <div className="space-y-2.5 mb-6">
+                      <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-2">
+                        {plan.id === 'pro' ? 'Diferenciais Exclusivos do Pro:' : 'O que está incluído no plano:'}
+                      </span>
+                      {plan.features.map((feature: any, fIdx: number) => {
+                        const itemText = typeof feature === 'string' ? feature : feature.text;
+                        const isItemHighlighted = typeof feature === 'string'
+                          ? (plan.id === 'pro' && fIdx > 0)
+                          : Boolean(feature.highlight);
+
+                        return (
+                          <div key={fIdx} className="flex items-start gap-2.5 text-xs text-slate-700">
+                            <div
+                              className={`size-4 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${
+                                isItemHighlighted
+                                  ? 'bg-emerald-600 text-white'
+                                  : 'bg-emerald-100 text-emerald-700'
+                              }`}
+                            >
+                              <Check className="size-2.5 stroke-[3]" />
+                            </div>
+                            <span className={isItemHighlighted ? 'font-bold text-[#0d1b2e]' : 'font-normal'}>
+                              {itemText}
+                            </span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Botão de Testar Grátis */}
+                  <div className="pt-2">
+                    <button
+                      onClick={onOpenTrial}
+                      className={`w-full py-3 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 shadow-xs transition-all cursor-pointer ${
+                        isHighlight
+                          ? 'bg-emerald-700 hover:bg-emerald-800 text-white shadow-emerald-700/20'
+                          : 'bg-slate-900 hover:bg-slate-800 text-white'
+                      }`}
+                    >
+                      <span>{plan.cta || 'Testar 7 Dias Grátis'}</span>
+                      <ArrowRight className="size-3.5" />
+                    </button>
+                    <p className="text-[10px] text-slate-400 text-center mt-2">
+                      Ativação imediata em 2 minutos • Sem fidelidade
+                    </p>
                   </div>
                 </div>
-
-                {/* Botão de Testar Grátis */}
-                <div className="pt-2">
-                  <button
-                    onClick={onOpenTrial}
-                    className={`w-full py-3 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 shadow-xs transition-all cursor-pointer ${
-                      plan.highlight
-                        ? 'bg-emerald-700 hover:bg-emerald-800 text-white shadow-emerald-700/20'
-                        : 'bg-slate-900 hover:bg-slate-800 text-white'
-                    }`}
-                  >
-                    <span>{plan.cta}</span>
-                    <ArrowRight className="size-3.5" />
-                  </button>
-                  <p className="text-[10px] text-slate-400 text-center mt-2">
-                    Ativação imediata em 2 minutos • Sem fidelidade
-                  </p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
