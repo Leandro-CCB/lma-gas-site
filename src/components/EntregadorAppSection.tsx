@@ -4,16 +4,13 @@ import {
   Navigation,
   MapPin,
   CheckCircle,
-  Phone,
-  QrCode,
-  ShieldCheck,
-  Zap,
-  ArrowRight,
-  Sparkles,
   Smartphone,
-  Banknote,
-  RotateCcw,
+  Sparkles,
+  ArrowRight,
+  RotateCw,
+  Coins,
 } from 'lucide-react';
+import { ENTREGADOR_FEATURES } from '../data/content';
 
 interface EntregadorAppSectionProps {
   onOpenTrial: () => void;
@@ -21,173 +18,126 @@ interface EntregadorAppSectionProps {
 
 export const EntregadorAppSection: React.FC<EntregadorAppSectionProps> = ({ onOpenTrial }) => {
   return (
-    <section id="entregador" className="py-20 sm:py-28 relative bg-gas-900/40 border-t border-slate-800/80 overflow-hidden">
-      {/* Glow de fundo */}
-      <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-cyan-500/10 blur-[130px] pointer-events-none rounded-full" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Lado Esquerdo: Argumentos Fortes de Venda do App do Entregador */}
+    <section id="entregador" className="py-16 sm:py-24 bg-white border-b border-slate-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          {/* Lado Esquerdo: Argumentação do Aplicativo do Entregador */}
           <div className="lg:col-span-7 space-y-6">
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">
-                🛵 O Fim do Papel Molhado e da Confusão
+              <span className="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+                Operação Ágil na Rua
               </span>
-              <h2 className="text-2xl sm:text-4xl font-extrabold text-white mt-3 tracking-tight">
-                A grande vantagem do <span className="text-gradient-blueflame">Aplicativo do Entregador</span>
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0d1b2e] mt-3 tracking-tight">
+                A vantagem do <span className="text-blue-600">Aplicativo do Entregador</span>
               </h2>
-              <p className="mt-4 text-base text-slate-300 leading-relaxed">
-                Quantas vezes seu motoboy errou o endereço, esqueceu de cobrar o PIX ou voltou para a revenda sem o botijão vazio do cliente? Com o <strong>App do Entregador LMA Gás</strong>, toda a entrega acontece direto no smartphone dele de forma rápida e segura.
+              <p className="mt-3 text-base text-slate-600 leading-relaxed">
+                Chega de comanda de papel molhada e entregador perdido na rua. O motoboy visualiza os pedidos no próprio celular, traça a rota no GPS com 1 toque e confirma as entregas na hora.
               </p>
             </div>
 
-            {/* Grid de 4 Vantagens Matadoras */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              <div className="glass-card p-4 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition-all">
-                <div className="size-10 rounded-xl bg-cyan-500/20 flex items-center justify-center text-cyan-400 mb-3">
-                  <Navigation className="size-5" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+              {ENTREGADOR_FEATURES.map((item, idx) => (
+                <div key={idx} className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+                  <h4 className="font-bold text-sm text-[#0d1b2e] flex items-center gap-1.5">
+                    <CheckCircle className="size-4 text-emerald-600 shrink-0" />
+                    {item.title}
+                  </h4>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    {item.desc}
+                  </p>
                 </div>
-                <h4 className="text-sm font-bold text-white">
-                  Roteirização Waze &amp; Google Maps
-                </h4>
-                <p className="text-xs text-slate-400 mt-1">
-                  1 clique e o trajeto mais rápido se abre no GPS do celular, economizando combustível e tempo de entrega.
-                </p>
-              </div>
-
-              <div className="glass-card p-4 rounded-2xl border border-slate-800 hover:border-emerald-500/40 transition-all">
-                <div className="size-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 mb-3">
-                  <QrCode className="size-5" />
-                </div>
-                <h4 className="text-sm font-bold text-white">
-                  PIX Dinâmico na Tela
-                </h4>
-                <p className="text-xs text-slate-400 mt-1">
-                  O entregador gera o QR Code na hora na tela do celular. O cliente escaneia e o dinheiro cai direto na conta da revenda.
-                </p>
-              </div>
-
-              <div className="glass-card p-4 rounded-2xl border border-slate-800 hover:border-amber-500/40 transition-all">
-                <div className="size-10 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-400 mb-3">
-                  <RotateCcw className="size-5" />
-                </div>
-                <h4 className="text-sm font-bold text-white">
-                  Acerto Obrigatório de Vasilhame
-                </h4>
-                <p className="text-xs text-slate-400 mt-1">
-                  Para concluir a entrega, o sistema exige confirmar se o vazio foi recebido. Nunca mais um entregador vai esquecer o botijão na casa do cliente.
-                </p>
-              </div>
-
-              <div className="glass-card p-4 rounded-2xl border border-slate-800 hover:border-purple-500/40 transition-all">
-                <div className="size-10 rounded-xl bg-purple-500/20 flex items-center justify-center text-purple-400 mb-3">
-                  <Banknote className="size-5" />
-                </div>
-                <h4 className="text-sm font-bold text-white">
-                  Comissão Automática por Botijão
-                </h4>
-                <p className="text-xs text-slate-400 mt-1">
-                  O motoboy acompanha o total de botijões entregues no dia e a comissão acumulada, gerando transparência e motivação na equipe.
-                </p>
-              </div>
+              ))}
             </div>
 
-            <div className="p-4 rounded-2xl bg-cyan-950/30 border border-cyan-800/40 flex items-center gap-3">
-              <Smartphone className="size-6 text-cyan-400 shrink-0" />
-              <div className="text-xs text-cyan-200">
-                <strong>Sem necessidade de instalar app pesado:</strong> O sistema funciona como um Web App (PWA) leve, abrindo em segundos em qualquer Android ou iPhone sem ocupar memória.
+            <div className="p-4 rounded-xl bg-blue-50/70 border border-blue-200 text-xs text-blue-900 flex items-center gap-3">
+              <Smartphone className="size-6 text-blue-600 shrink-0" />
+              <div>
+                <strong>Web App leve e instantâneo:</strong> O entregador não precisa baixar nada da Play Store nem ocupar a memória do celular. O acesso é feito com código rápido pelo navegador.
               </div>
             </div>
 
             <div className="pt-2">
               <button
                 onClick={onOpenTrial}
-                className="px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-extrabold text-sm shadow-glow-blue cursor-pointer transition-all flex items-center gap-2"
+                className="px-7 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-sm transition-all cursor-pointer flex items-center gap-2"
               >
-                <Sparkles className="size-4 text-cyan-200" />
+                <Sparkles className="size-4 text-blue-200" />
                 Quero o App do Entregador na Minha Revenda
                 <ArrowRight className="size-4" />
               </button>
             </div>
           </div>
 
-          {/* Lado Direito: Mockup Realista de Smartphone Moderno */}
+          {/* Lado Direito: Mockup Realista do Smartphone do Entregador */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="w-[300px] sm:w-[320px] rounded-[40px] bg-slate-900 border-4 border-slate-700 p-3 shadow-2xl relative">
-              {/* Entalhe do Celular (Dynamic Island) */}
-              <div className="w-24 h-4 bg-slate-800 rounded-full mx-auto mb-3 flex items-center justify-center">
-                <span className="size-2 rounded-full bg-slate-950 inline-block" />
-              </div>
+            <div className="w-[300px] sm:w-[320px] rounded-[36px] bg-[#0d1b2e] p-3 shadow-2xl text-slate-800 border-4 border-slate-700">
+              {/* Dynamic Island */}
+              <div className="w-20 h-4 bg-slate-900 rounded-full mx-auto mb-3" />
 
-              {/* Tela do Aplicativo LMA Gás Entregador */}
-              <div className="bg-gas-950 rounded-[30px] p-3.5 space-y-3 text-xs text-white overflow-hidden border border-slate-800 select-none">
+              {/* Tela do Aplicativo do Entregador */}
+              <div className="bg-[#f8fafc] rounded-[24px] p-3.5 space-y-3 text-xs overflow-hidden select-none border border-slate-200">
                 {/* Header do App Mobile */}
-                <div className="flex items-center justify-between pb-2 border-b border-slate-800">
+                <div className="flex items-center justify-between pb-2 border-b border-slate-200">
                   <div className="flex items-center gap-2">
-                    <span className="text-base">🛵</span>
+                    <div className="size-7 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
+                      <Truck className="size-4" />
+                    </div>
                     <div>
-                      <div className="font-extrabold text-xs text-white">Carlos Moto 01</div>
-                      <div className="text-[9px] text-emerald-400 font-bold">Online • 4 Botijões Cheios</div>
+                      <div className="font-black text-xs text-slate-900">Carlos Moto 01</div>
+                      <div className="text-[10px] text-emerald-600 font-bold">Online • 4 em Carga</div>
                     </div>
                   </div>
-                  <span className="text-[10px] font-bold text-amber-300 bg-amber-500/20 px-2 py-0.5 rounded-full">
-                    2 Pendentes
+                  <span className="text-[10px] font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
+                    2 Entregas
                   </span>
                 </div>
 
-                {/* Pedido 1: Em Rota Ativo */}
-                <div className="p-3 rounded-2xl bg-gas-900 border border-cyan-500/50 space-y-2 shadow-lg">
+                {/* Abas Mobile */}
+                <div className="flex gap-1 bg-slate-200/70 p-1 rounded-lg text-center text-[10px] font-bold">
+                  <span className="flex-1 py-1 rounded bg-white text-slate-900 shadow-xs">
+                    Pendentes (1)
+                  </span>
+                  <span className="flex-1 py-1 text-slate-600">
+                    Em Rota (1)
+                  </span>
+                  <span className="flex-1 py-1 text-slate-600">
+                    Entregues (12)
+                  </span>
+                </div>
+
+                {/* Card de Entrega Ativa */}
+                <div className="p-3 rounded-xl bg-white border border-blue-300 shadow-sm space-y-2">
                   <div className="flex justify-between items-center">
-                    <span className="font-extrabold text-xs text-white">#1084 • Maria Aparecida</span>
-                    <span className="text-[9px] font-extrabold text-cyan-300 bg-cyan-500/20 px-2 py-0.5 rounded">
+                    <span className="font-black text-xs text-slate-900">#1082 • Maria Aparecida</span>
+                    <span className="text-[9px] font-bold text-blue-700 bg-blue-100 px-1.5 py-0.2 rounded">
                       EM ROTA
                     </span>
                   </div>
 
-                  <div className="text-[11px] text-slate-300">
-                    📍 Rua das Palmeiras, 142 - Apto 32B
-                    <div className="text-[9px] text-slate-400 mt-0.5">Ref: Próximo à padaria, portão branco</div>
+                  <div className="text-[11px] text-slate-600">
+                    📍 Rua das Palmeiras, 142 - Jd. São Paulo
+                    <div className="text-[10px] text-slate-500 mt-0.5">Ref: Próximo à padaria</div>
                   </div>
 
-                  <div className="p-2 rounded-lg bg-gas-950 border border-slate-800 flex justify-between items-center text-[11px]">
-                    <span className="font-bold text-white">1x P13 Ultragaz + 1x Água 20L</span>
-                    <span className="font-extrabold text-emerald-400">R$ 131,00</span>
+                  <div className="flex justify-between items-center p-2 rounded bg-slate-50 border border-slate-200 text-[11px]">
+                    <span className="font-semibold text-slate-800">1x Botijão P13 Ultragaz</span>
+                    <span className="font-black text-emerald-700">R$ 115,00 (Pix)</span>
                   </div>
 
                   <div className="grid grid-cols-2 gap-1.5 pt-1">
-                    <a
-                      href="https://waze.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-[11px] flex items-center justify-center gap-1 shadow-sm"
-                    >
-                      <Navigation className="size-3" /> Waze GPS
-                    </a>
-                    <button className="py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-[11px] flex items-center justify-center gap-1 shadow-sm">
+                    <button className="py-1.5 rounded-lg bg-blue-600 text-white font-bold text-[10px] flex items-center justify-center gap-1 shadow-xs">
+                      <Navigation className="size-3" /> Waze / Maps
+                    </button>
+                    <button className="py-1.5 rounded-lg bg-emerald-600 text-white font-bold text-[10px] flex items-center justify-center gap-1 shadow-xs">
                       <CheckCircle className="size-3" /> Concluir
                     </button>
                   </div>
                 </div>
 
-                {/* Pedido 2: Próxima Parada */}
-                <div className="p-2.5 rounded-xl bg-gas-900/60 border border-slate-800 space-y-1 text-[10px]">
-                  <div className="flex justify-between text-slate-300">
-                    <span className="font-bold">#1085 • Pizzaria Bella Napoli</span>
-                    <span className="text-amber-400">Próxima</span>
-                  </div>
-                  <div className="text-slate-400">Av. Liberdade, 780 • 2x P45 Comercial</div>
-                </div>
-
-                {/* Resumo do Dia do Entregador */}
-                <div className="p-2.5 rounded-xl bg-gas-900 border border-slate-800 flex justify-between items-center text-[10px]">
-                  <div>
-                    <span className="text-slate-400">Entregas de hoje:</span>
-                    <span className="font-bold text-white ml-1">16 botijões</span>
-                  </div>
-                  <div className="text-right">
-                    <span className="text-slate-400">Sua comissão:</span>
-                    <span className="font-bold text-emerald-400 ml-1">R$ 80,00</span>
-                  </div>
+                {/* Resumo de Comissão do Entregador */}
+                <div className="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 flex justify-between items-center text-[10px]">
+                  <span className="font-bold text-emerald-900">Entregas hoje: 13 botijões</span>
+                  <span className="font-black text-emerald-700 text-xs">Comissão: R$ 65,00</span>
                 </div>
               </div>
             </div>

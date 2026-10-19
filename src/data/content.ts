@@ -1,21 +1,22 @@
-import type { ScreenDetail, PlanItem, FaqItem, TestimonialItem } from '../types';
+export interface ScreenItem {
+  id: string;
+  tag: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  features: string[];
+}
 
 export const HERO_DATA = {
-  badge: "⚡ O ERP Especializado em Revendas de Gás e Água #1 no Brasil",
-  headline: "Aumente o lucro da sua revenda, zere o extravio de vasilhames e automatize suas entregas.",
-  subheadline: "O único sistema completo com PDV de 10 segundos, Cardápio Digital próprio sem taxas do iFood, Aplicativo do Entregador com mapas e inteligência que avisa quando o botijão do cliente está para acabar.",
+  badge: "Sistema Completo de Gestão em Nuvem",
+  headline: "O software definitivo para organizar, vender e entregar gás e água mineral.",
+  subheadline: "PDV rápido para balcão e delivery, aplicativo móvel com rotas para os entregadores, cardápio digital próprio sem pagar taxas de comissão e alerta de clientes sem comprar há mais de 60 dias.",
   bulletPoints: [
     "Teste grátis por 7 dias sem cartão",
-    "Compatível com todas as bandeiras",
-    "App do entregador incluso",
-    "Instalação e treino em 15 minutos",
+    "Cardápio digital próprio sem taxa",
+    "App do entregador com GPS (Waze/Maps)",
+    "Funciona em qualquer PC, tablet ou celular",
   ],
-  stats: [
-    { value: "+35%", label: "Mais velocidade nas entregas", hint: "Despacho direto no celular do entregador" },
-    { value: "R$ 0", label: "De taxa por pedido no Cardápio", hint: "Economia de até R$ 2.400/mês vs iFood/Zé" },
-    { value: "0%", label: "De perda de vasilhames", hint: "Conferência rigorosa de carga e rua" },
-    { value: "+22%", label: "Recompra recorrente", hint: "Lembrete automático quando o gás está acabando" },
-  ]
 };
 
 export const DISTRIBUIDORAS = [
@@ -26,277 +27,210 @@ export const DISTRIBUIDORAS = [
   { name: 'Consigaz', color: '#db2777', bg: '#fdf2f8', border: '#f472b6' },
   { name: 'Nacional Gás', color: '#2563eb', bg: '#eff6ff', border: '#93c5fd' },
   { name: 'Fogás', color: '#ca8a04', bg: '#fefce8', border: '#fde047' },
-  { name: 'Revendas Multimarcas', color: '#f97316', bg: '#fff7ed', border: '#fed7aa' },
+  { name: 'Revendas Multimarcas', color: '#059669', bg: '#ecfdf5', border: '#a7f3d0' },
 ];
 
-export const PROBLEM_SOLUTION = [
-  {
-    problem: "Perda constante de botijões vazios na rua e entregadores que não prestam contas",
-    solution: "Rastreabilidade de cada vasilhame: você sabe exatamente quantos botijões cheios e vazios estão na portaria e com cada entregador.",
-  },
-  {
-    problem: "Clientes comprando do concorrente porque você esquece de quando eles precisam de gás",
-    solution: "Inteligência de Recompra: o sistema prevê a data exata do fim do gás e gera a lista para você enviar mensagem no WhatsApp antes do concorrente.",
-  },
-  {
-    problem: "Pagando 15% a 25% de comissões absurdas em apps como Zé Delivery e iFood",
-    solution: "Cardápio Digital Próprio com o link da sua revenda: o cliente pede pelo celular ou WhatsApp e 100% do lucro fica no seu bolso.",
-  },
-  {
-    problem: "Linhas telefônicas congestionadas e atendentes demorando 3 minutos para anotar um pedido",
-    solution: "Frente de Caixa (PDV) ultra-rápido: busca cliente pelo telefone, preenche o endereço e despacha para o entregador em menos de 10 segundos.",
-  },
-  {
-    problem: "Fechamento de caixa que nunca bate entre dinheiro, PIX, maquininha e fiado",
-    solution: "Fechamento cego e conferência por turno: o entregador acerta o valor exato no app e o sistema audita todas as transações.",
-  },
-];
-
-export const SCREENS_DATA: ScreenDetail[] = [
+export const SCREENS: ScreenItem[] = [
   {
     id: 'dashboard',
-    tag: 'Visão Estratégica',
-    title: 'Dashboard Executivo & DRE em Tempo Real',
-    subtitle: 'Tudo o que acontece na sua revenda em uma única tela, de qualquer lugar do mundo.',
-    description: 'Monitore suas vendas minuto a minuto, acompanhe a meta do mês, veja o ticket médio por canal (portaria vs entrega) e saiba o faturamento líquido sem esperar o final do mês.',
-    highlights: [
-      'Contador de botijões vendidos hoje (P13, P20, P45, Água 20L)',
-      'Gráficos dinâmicos de faturamento dos últimos 14 dias',
-      'Termômetro da meta mensal da revenda com projeção',
-      'Alerta imediato de estoque crítico de vasilhames cheios',
+    tag: 'Visão Geral',
+    title: 'Dashboard em Tempo Real',
+    subtitle: 'Faturamento diário, estoque e vendas dos últimos 14 dias em uma só tela.',
+    description: 'Acompanhe as vendas do dia, entradas e saídas do caixa, contas a pagar vencidas, nível do estoque de cada botijão com alerta de reposição e gráfico de receita diária dos últimos 14 dias.',
+    features: [
+      'Cards de Vendas Hoje, Saldo do Caixa e Contas Vencidas',
+      'Gráfico de receita diária dos últimos 14 dias',
+      'Estoque de botijões (P13, P20, P45, Água 20L) com alerta de estoque mínimo',
+      'Tabela com as últimas vendas realizadas no balcão e delivery',
+      'Ranking dos produtos mais vendidos nos últimos 30 dias',
     ],
-    kpis: [
-      { label: 'Vendas Hoje', value: '142 botijões', hint: '+18% vs ontem' },
-      { label: 'Faturamento Dia', value: 'R$ 15.620,00', hint: 'Meta 92% atingida' },
-      { label: 'Tempo Médio Entrega', value: '23 minutos', hint: '7 min mais rápido' },
-      { label: 'Estoque Cheio P13', value: '380 un', hint: 'Nível seguro' },
-    ]
   },
   {
-    id: 'pdv',
-    tag: 'Frente de Caixa',
-    title: 'PDV & Televendas Ultra-Rápido (10 Segundos)',
-    subtitle: 'Atenda o telefone e despache o botijão antes mesmo do cliente desligar a ligação.',
-    description: 'Projetado especificamente para a agilidade que a revenda de gás exige. Basta digitar o número do telefone ou nome: o endereço completo, o tipo de botijão de preferência e o tempo desde a última compra aparecem na tela instantaneamente.',
-    highlights: [
-      'Identificação rápida com histórico completo de compras',
-      'Cálculo automático de troco e formas de pagamento mistas',
-      'Despacho com 1 clique para o entregador mais próximo',
-      'Impressão automática em bobina térmica (58mm e 80mm)',
+    id: 'nova-venda',
+    tag: 'Frente de Caixa (PDV)',
+    title: 'Nova Venda (Balcão e Entrega)',
+    subtitle: 'Lançamento ágil de vendas em poucos cliques para não perder tempo no telefone.',
+    description: 'Desenvolvido para atender clientes com máxima velocidade. Selecione entre Retirada no Balcão ou Para Entrega, escolha o cliente da base ou cadastre na hora, adicione os produtos e defina a forma de pagamento.',
+    features: [
+      'Alternador rápido: Balcão ou Para Entrega',
+      'Busca rápida de cliente cadastrado ou cadastro inline de novo cliente',
+      'Produtos em cards com saldo de estoque atual e alertas',
+      'Formas de pagamento com botões: Dinheiro, Pix, Débito, Crédito, QR Code e Fiado',
+      'Atribuição da venda para o entregador da equipe',
+      'Impressão de comprovante térmico para entrega',
     ],
-    kpis: [
-      { label: 'Tempo de Atendimento', value: '8.4 seg', hint: 'Recorde de velocidade' },
-      { label: 'Erros de Endereço', value: '0%', hint: 'Validado com histórico' },
-      { label: 'Despacho Direto', value: '1 Toque', hint: 'Cai no app do motoboy' },
-      { label: 'Troco Calculado', value: 'Automático', hint: 'Sem erro de troco' },
-    ]
   },
   {
-    id: 'entregador',
-    tag: 'Mobilidade Total',
-    title: 'Aplicativo do Entregador com Rotas e Mapas',
-    subtitle: 'Seus entregadores recebem os pedidos na rua com rota otimizada e acerto de vasilhame.',
-    description: 'Chega de papelzinho molhado e confusão de endereços. O entregador abre o LMA Gás no celular, vê os pedidos atribuídos a ele, clica em "Abrir Rota" no Waze ou Google Maps e confirma a entrega com um toque.',
-    highlights: [
-      'Roteirização com 1 clique no Google Maps e Waze',
-      'Botão direto para falar no WhatsApp com o cliente avisando da chegada',
-      'Recebimento via PIX com QR Code dinâmico na tela do celular',
-      'Controle rigoroso: baixa obrigatória do vasilhame vazio recolhido',
+    id: 'entregas',
+    tag: 'Operação de Rua',
+    title: 'Painel de Entregas & Rastreio',
+    subtitle: 'Organize suas saídas com status em tempo real e rotas no GPS.',
+    description: 'Acompanhe todas as entregas do dia divididas em abas: Pendentes, Em Rota e Entregues. Cada cartão traz o nome do cliente, telefone, endereço com bairro, produtos do pedido, valor total e entregador.',
+    features: [
+      'Abas organizadas: Pendentes, Em Rota e Entregues',
+      'Botão "Abrir Rota" integrado diretamente com Waze e Google Maps',
+      'Avanço de status com um clique (Despachar para rota / Concluir entrega)',
+      'Horários registrados: horário de criação, saída e entrega concluída',
+      'Gestão de entregadores com código de ativação individual',
     ],
-    kpis: [
-      { label: 'Economia de Combustível', value: '25%', hint: 'Rotas inteligentes' },
-      { label: 'Entregas por Hora', value: '+40%', hint: 'Mais entregas por moto' },
-      { label: 'Prestação de Contas', value: '5 minutos', hint: 'No fim do expediente' },
-      { label: 'Ligação de Cliente', value: '-80%', hint: 'Cliente sabe onde está' },
-    ]
+  },
+  {
+    id: 'clientes',
+    tag: 'Resgate de Clientes',
+    title: 'Clientes & Alerta de Inativos (+60 e +90 dias)',
+    subtitle: 'Saiba quais clientes pararam de comprar e chame no WhatsApp antes da concorrência.',
+    description: 'O LMA Gás categoriza sua carteira de clientes com base na data da última compra. Com os filtros rápidos de +60 dias e +90 dias sem comprar, você identifica os clientes que estão sumidos e entra em contato direto pelo WhatsApp.',
+    features: [
+      'Filtro rápido: Todos os clientes, +60 dias sem comprar e +90 dias sem comprar',
+      'Badges coloridos de tempo desde a última compra (verde até 30d, amarelo até 60d, vermelho +60d)',
+      'Link direto para abrir o WhatsApp do cliente com um clique',
+      'Histórico completo de pedidos e endereço cadastrado',
+      'Busca instantânea por nome, telefone, bairro ou endereço',
+    ],
   },
   {
     id: 'cardapio',
-    tag: 'Venda Direta',
-    title: 'Cardápio Digital Próprio (Zero Comissões)',
-    subtitle: 'Seu cliente pede pelo WhatsApp em 3 toques e você não paga 1 centavo de comissão.',
-    description: 'Transforme o WhatsApp da sua revenda em uma máquina de vendas. Seus clientes acessam um cardápio moderno com as cores da sua distribuidora, escolhem o botijão P13 ou água mineral, digitam o endereço e o pedido cai pronto na sua tela.',
-    highlights: [
-      'Link personalizado exclusivo (ex: suarevenda.lmaapp.com.br)',
-      'Identidade visual oficial da sua bandeira (Ultragaz, Liquigás, etc.)',
-      'Sem intermediários: 100% do lucro da venda é seu',
-      'Alerta sonoro alto no caixa a cada novo pedido recebido',
+    tag: 'Venda Online',
+    title: 'Cardápio Digital sem Taxas',
+    subtitle: 'Seu próprio link de pedidos online sem pagar comissão para o iFood ou Zé Delivery.',
+    description: 'Tenha uma página online profissional com o nome e as cores da sua revenda para divulgar no WhatsApp e no Google. O cliente escolhe o botijão ou água, informa o endereço e o pedido cai na sua tela de Pedidos Online com alerta sonoro.',
+    features: [
+      'Link próprio e exclusivo para sua revenda divulgar',
+      'Zero comissão sobre vendas (100% do valor do pedido fica com você)',
+      'Visual adaptado com a logomarca da sua distribuidora (Ultragaz, Liquigás, etc.)',
+      'Notificação sonora no computador a cada novo pedido recebido',
+      'O cliente pede pelo celular ou computador sem precisar instalar nada',
     ],
-    kpis: [
-      { label: 'Taxa de Comissão', value: '0%', hint: 'Economia total' },
-      { label: 'Conversão de Pedidos', value: '74%', hint: 'Processo ultra-simples' },
-      { label: 'Pedidos Fora do Horário', value: 'Automático', hint: 'Agendamento fácil' },
-      { label: 'Satisfação do Cliente', value: '4.9★', hint: 'Sem filas no telefone' },
-    ]
   },
   {
-    id: 'vasilhames',
-    tag: 'Segurança Patrimonial',
-    title: 'Controle de Vasilhames, Cargas e Comodatos',
-    subtitle: 'Cada botijão vale mais de R$ 200,00. Pare de perder seu patrimônio na rua.',
-    description: 'Módulo exclusivo para gestão de botijões cheios, vazios, em manutenção e em comodato com clientes comerciais (restaurantes, pizzarias, padarias). Saiba exatamente com quem está cada botijão da sua revenda.',
-    highlights: [
-      'Balanço diário de cheios e vazios da portaria vs rua',
-      'Emissão oficial de Contrato de Comodato em PDF',
-      'Conferência de carga no carregamento e descarregamento das motos',
-      'Registro histórico de descarte e manutenção de vasilhames',
+    id: 'caixa',
+    tag: 'Financeiro',
+    title: 'Caixa & Fechamento Cego',
+    subtitle: 'Controle rigoroso de entradas, saídas, sangrias e conferência de turno.',
+    description: 'Registre todas as movimentações financeiras da revenda. No final do expediente, realize o Fechamento de Caixa Cego: o operador informa os valores em dinheiro, Pix e cartões, e o sistema confere automaticamente.',
+    features: [
+      'Lançamento de suprimentos e sangrias no caixa',
+      'Fechamento Cego de Turno com conferência de sobra/falta por forma de pagamento',
+      'Filtro de extrato por período (data inicial e final)',
+      'Contas a pagar com controle de vencimentos',
+      'Exportação de extratos e comprovantes',
     ],
-    kpis: [
-      { label: 'Extravio de Vasilhames', value: '0 perdas', hint: 'Controle total da praça' },
-      { label: 'Patrimônio Protegido', value: '+R$ 80.000', hint: 'Vasilhames rastreados' },
-      { label: 'Contratos em Comodato', value: '100% PDF', hint: 'Validade jurídica' },
-      { label: 'Conferência de Carga', value: '2 minutos', hint: 'Entrada e saída rápida' },
-    ]
   },
-  {
-    id: 'crm',
-    tag: 'Fidelização Ativa',
-    title: 'CRM Inteligente: Aviso de Gás Acabando',
-    subtitle: 'O sistema calcula quando o gás vai acabar e avisa para você vender antes do concorrente.',
-    description: 'Uma família de 4 pessoas consome um botijão P13 a cada 40 a 50 dias. O LMA Gás calcula a média individual de cada cliente e gera uma lista diária dos clientes que estão no momento de comprar novamente.',
-    highlights: [
-      'Cálculo automático do ciclo médio de consumo por residência ou comércio',
-      'Disparo de mensagem personalizada no WhatsApp com 1 clique',
-      'Histórico de pedidos favoritos, observações de entrega e endereço',
-      'Recuperação automática de clientes inativos há mais de 60 dias',
-    ],
-    kpis: [
-      { label: 'Retenção de Clientes', value: '+28%', hint: 'Clientes não trocam de marca' },
-      { label: 'Vendas Proativas', value: '35 botijões/dia', hint: 'Sem depender do telefone tocar' },
-      { label: 'Resgate de Inativos', value: '19%', hint: 'Voltaram a comprar' },
-      { label: 'Fidelidade da Carteira', value: 'Alta', hint: 'Atendimento humanizado' },
-    ]
-  }
 ];
 
-export const PLANS_DATA: PlanItem[] = [
+export const ENTREGADOR_FEATURES = [
   {
-    id: 'start',
-    name: 'Plano Portaria & Caixa',
-    description: 'Ideal para revendas que desejam organizar o balcão, caixa e controle de vasilhames.',
-    priceMonthly: 119,
-    priceQuarterly: 99,
+    title: 'Sem instalar app pesado na Play Store',
+    desc: 'O entregador acessa um link leve pelo navegador do celular e ativa com o código fornecido pelo administrador da revenda.',
+  },
+  {
+    title: 'Roteirização com Waze e Google Maps',
+    desc: 'Basta clicar no botão de rota do pedido para abrir o melhor caminho no GPS, economizando tempo e gasolina da moto.',
+  },
+  {
+    title: 'Atualização de status em um toque',
+    desc: 'O entregador marca quando saiu para a entrega e confirma quando concluiu, atualizando o painel da revenda em tempo real.',
+  },
+  {
+    title: 'Relatório do dia e comissão',
+    desc: 'O entregador visualiza quantas entregas realizou no dia e o valor total acumulado de comissão.',
+  },
+];
+
+export const CARDAPIO_FEATURES = [
+  {
+    title: 'Zero taxas de intermediação',
+    desc: 'Diferente dos aplicativos de entrega que cobram de 15% a 25% de comissão por botijão vendido, no LMA Gás você não paga taxa por pedido.',
+  },
+  {
+    title: 'Pedido direto com som no computador',
+    desc: 'Assim que o cliente confirma o pedido pelo cardápio, toca um sinal sonoro no caixa para o atendente despachar na hora.',
+  },
+  {
+    title: 'Compatível com WhatsApp e Google Meu Negócio',
+    desc: 'Coloque o link do seu cardápio no recado automático do WhatsApp da revenda e no perfil do Google para receber pedidos 24h.',
+  },
+  {
+    title: 'Design adaptado para a sua bandeira',
+    desc: 'Seu cardápio exibe as cores e identidade visual da distribuidora autorizada que você representa.',
+  },
+];
+
+export const PLANS = [
+  {
+    id: 'starter',
+    name: 'Plano Básico',
+    desc: 'Para pequenas revendas que precisam organizar caixa, vendas de balcão e estoque.',
+    priceMonthly: 97,
+    priceQuarterly: 85,
     features: [
-      'PDV & Televendas de alta velocidade',
-      'Controle de Estoque (P13, P20, P45 e Água)',
-      'Controle de Vasilhames Cheios e Vazios',
-      'Fechamento de Caixa Cego por Turno',
-      'Cadastro ilimitado de Clientes e Produtos',
-      'Impressão térmica em 58mm e 80mm',
-      'Suporte humanizado via WhatsApp',
+      'Frente de Caixa (PDV) rápido',
+      'Controle de Estoque com alerta de mínimo',
+      'Cadastro de Clientes e Histórico',
+      'Fechamento de Caixa e Movimentações',
+      'Impressão térmica de comprovantes',
+      'Suporte via WhatsApp',
     ],
-    ctaLabel: 'Começar Teste de 7 Dias'
   },
   {
     id: 'pro',
-    name: 'Plano Delivery Pro',
+    name: 'Plano Profissional',
     badge: 'MAIS ESCOLHIDO',
     highlighted: true,
-    description: 'A solução completa: PDV, App do Entregador com mapas e Cardápio Digital próprio sem taxas.',
-    priceMonthly: 197,
-    priceQuarterly: 169,
+    desc: 'A solução completa com gestão de entregas, app do motoboy e cardápio digital próprio.',
+    priceMonthly: 167,
+    priceQuarterly: 147,
     features: [
-      'Tudo do Plano Portaria & Caixa',
-      '🚀 Aplicativo do Entregador com GPS / Waze',
-      '🍕 Cardápio Digital Próprio com link exclusivo',
-      '📱 Notificações sonoras no caixa em tempo real',
-      '🧠 CRM com Alerta de Gás Acabando (Recompra)',
-      '📄 Emissão de Contratos de Comodato em PDF',
-      '🗺️ Roteirização inteligente e acerto de vasilhames',
-      '💵 Recebimento com PIX QR Code pelo celular do motoboy',
-      '📊 DRE e Relatórios Financeiros completos',
-      '⚡ Suporte VIP prioritário no WhatsApp',
+      'Tudo do Plano Básico',
+      '🛵 Aplicativo do Entregador com rotas no Waze/Maps',
+      '🍕 Cardápio Digital próprio sem comissão por pedido',
+      '📱 Alerta sonoro no computador para novos pedidos online',
+      '⚠️ Filtro de Clientes Inativos (+60 e +90 dias sem comprar)',
+      '📊 Relatórios gerenciais e exportação para Excel',
+      '👥 Entregadores e usuários ilimitados',
+      '⚡ Suporte prioritário via WhatsApp',
     ],
-    ctaLabel: 'Testar Plano Pro Grátis'
   },
   {
-    id: 'enterprise',
-    name: 'Plano Multi-Depósitos & Redes',
-    badge: 'GRANDES OPERAÇÕES',
-    description: 'Para redes de revendas com múltiplos depósitos, frota pesada e gestão centralizada.',
-    priceMonthly: 349,
-    priceQuarterly: 299,
+    id: 'multi',
+    name: 'Plano Multi-Empresas',
+    desc: 'Para proprietários com múltiplos depósitos de gás e filiais.',
+    priceMonthly: 280,
+    priceQuarterly: 245,
     features: [
-      'Tudo do Plano Delivery Pro',
-      '🏢 Gestão de Múltiplos Depósitos / Filiais',
-      '🚛 Controle de Caminhões de Carga e Romaneios',
-      '👥 Usuários e entregadores ilimitados',
-      '🔐 Níveis de permissão avançados por função',
-      '📈 DRE consolidado de toda a rede',
-      '⚙️ Integração com APIs e banco Supabase dedicado',
-      '🤝 Gerente de conta exclusivo e treinamento da equipe',
+      'Tudo do Plano Profissional',
+      'Gestão de múltiplos depósitos e filiais no mesmo acesso',
+      'Transferência de estoque entre unidades',
+      'Relatórios consolidados de faturamento',
+      'Acompanhamento gerencial centralizado',
+      'Treinamento individual da equipe',
     ],
-    ctaLabel: 'Falar com Consultor'
-  }
+  },
 ];
 
-export const TESTIMONIALS_DATA: TestimonialItem[] = [
+export const FAQS = [
   {
-    name: 'Roberto Antônio Silva',
-    role: 'Proprietário',
-    company: 'Bertoni Comércio de Gás',
-    city: 'Franco da Rocha - SP',
-    avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=160&auto=format&fit=crop&q=80',
-    bottlesPerMonth: '4.800 botijões/mês',
-    highlight: 'Zero perdas de vasilhames e fechamento de caixa em 5 minutos.',
-    quote: 'Antes do LMA Gás a gente perdia botijão direto com entregador na rua e o acerto no final da tarde demorava mais de uma hora. Hoje o entregador já chega com os vasilhames contados no app e o caixa fecha no centavo. Mudou nossa rotina.'
+    q: 'Como funciona o teste grátis de 7 dias?',
+    a: 'Você preenche o formulário de cadastro, cria sua conta e tem 7 dias para testar todas as funcionalidades do sistema na sua revenda, sem precisar cadastrar cartão de crédito.',
   },
   {
-    name: 'Marcos Vinícius Andrade',
-    role: 'Gerente Geral',
-    company: 'Revenda Aliança Gás & Água',
-    city: 'Belo Horizonte - MG',
-    avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=160&auto=format&fit=crop&q=80',
-    bottlesPerMonth: '2.900 botijões/mês',
-    highlight: 'Economizamos R$ 2.100 por mês só deixando de pagar taxas de apps.',
-    quote: 'Colocamos o link do Cardápio Digital do LMA Gás no WhatsApp da revenda e no perfil do Google. Mais de 40% dos clientes pedem direto por lá. Não pagamos mais comissão de aplicativo e o cliente adora a rapidez.'
+    q: 'O que é o alerta de clientes inativos?',
+    a: 'O LMA Gás analisa o histórico de compras e disponibiliza filtros rápidos de clientes que não compram há mais de 60 dias ou mais de 90 dias. Você clica em um botão e já abre o WhatsApp do cliente para fazer o contato e reconquistar a venda.',
   },
   {
-    name: 'Cláudia Regina Mendes',
-    role: 'Sócia-Diretora',
-    company: 'Super Gás Express',
-    city: 'Campinas - SP',
-    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=160&auto=format&fit=crop&q=80',
-    bottlesPerMonth: '3.400 botijões/mês',
-    highlight: 'O lembrete de gás acabando aumentou nossas vendas em 25%.',
-    quote: 'Essa função de prever quando o gás do cliente vai acabar é ouro puro! Toda manhã a equipe manda mensagem pelo WhatsApp para quem está no prazo de reposição. O cliente agradece a atenção e não compra do concorrente.'
-  }
-];
-
-export const FAQS_DATA: FaqItem[] = [
-  {
-    category: 'Geral',
-    q: 'Como funciona o teste gratuito de 7 dias?',
-    a: 'Você clica no botão "Testar Grátis", cria sua conta em menos de 1 minuto e já tem acesso total e ilimitado a todas as ferramentas do LMA Gás: PDV, App do Entregador, Cardápio Digital e Estoque. Não pedimos cartão de crédito para testar.'
+    q: 'Como os entregadores acessam o aplicativo?',
+    a: 'O aplicativo do entregador é um Web App (PWA). Você cadastra o entregador no painel, gera um código de ativação de 6 dígitos e ele digita no celular dele. O app abre direto no navegador sem ocupar espaço na memória.',
   },
   {
-    category: 'Equipamentos',
-    q: 'Preciso comprar computadores caros ou aparelhos novos?',
-    a: 'Não! O LMA Gás é 100% em nuvem e leve. Funciona em qualquer computador simples com internet (Windows, Mac ou Linux), tablets e notebooks. O aplicativo do entregador roda direto no smartphone Android ou iPhone de qualquer motoboy.'
+    q: 'O cardápio digital cobra comissão por pedido vendido?',
+    a: 'Não cobra comissão! Diferente de apps como iFood e Zé Delivery que cobram porcentagens altas sobre cada venda, o cardápio do LMA Gás está incluído na assinatura mensal sem cobrança por pedido.',
   },
   {
-    category: 'Entregadores',
-    q: 'Como os meus entregadores usam o aplicativo?',
-    a: 'O entregador não precisa baixar nada da Play Store nem ocupar a memória do celular. Você envia um link pelo WhatsApp, ele clica e o aplicativo já abre com os pedidos atribuídos a ele, rotas no Waze e opção de recebimento no PIX.'
+    q: 'Funciona com a minha impressora térmica?',
+    a: 'Sim, o LMA Gás gera comprovantes de venda formatados para impressoras térmicas padrão de 58mm e 80mm com os dados do cliente, endereço, itens e valor.',
   },
   {
-    category: 'Cardápio Digital',
-    q: 'O cardápio digital realmente não cobra comissão por pedido?',
-    a: 'Zero comissão! Diferente de iFood ou Zé Delivery que cobram de 15% a 25% de cada venda que você faz, no LMA Gás o cardápio é 100% seu. Você paga apenas a assinatura fixa mensal do sistema e vende quanto quiser.'
+    q: 'Preciso instalar algum programa no computador?',
+    a: 'Não. O LMA Gás é 100% em nuvem e funciona direto no navegador (Chrome, Edge, Firefox, Safari) em computadores, notebooks, tablets e celulares.',
   },
-  {
-    category: 'Impressoras',
-    q: 'Funciona com a minha impressora térmica de bobina?',
-    a: 'Sim! É compatível com qualquer impressora térmica padrão de 58mm ou 80mm (Bematech, Epson, Elgin, Daruma, POS, Bluetooth ou USB). A comanda sai formatada com os dados do cliente, endereço e produtos para o entregador levar.'
-  },
-  {
-    category: 'Segurança',
-    q: 'Meus dados e clientes estão seguros?',
-    a: 'Totalmente. O LMA Gás utiliza infraestrutura corporativa na nuvem com banco de dados PostgreSQL / Supabase, criptografia de ponta a ponta e backups automáticos diários. Ninguém tem acesso aos seus dados a não ser você.'
-  },
-  {
-    category: 'Cancelamento',
-    q: 'Existe contrato de fidelidade ou multa se eu quiser cancelar?',
-    a: 'Nenhuma fidelidade e nenhuma multa! Você só continua utilizando se o LMA Gás estiver trazendo mais lucro e organização para a sua revenda. Pode pausar ou cancelar a qualquer momento sem pegadinhas.'
-  }
 ];

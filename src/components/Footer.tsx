@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flame, ShieldCheck, PhoneCall, Mail, MapPin, ExternalLink, Heart } from 'lucide-react';
+import { ShieldCheck, PhoneCall, ExternalLink } from 'lucide-react';
 
 interface FooterProps {
   onOpenTrial: () => void;
@@ -7,66 +7,62 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onOpenTrial }) => {
   return (
-    <footer className="bg-gas-950 border-t border-slate-800/80 pt-16 pb-12 text-slate-400 text-xs sm:text-sm">
+    <footer className="bg-white border-t border-slate-200 pt-12 pb-8 text-slate-600 text-xs sm:text-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-12 border-b border-slate-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-slate-200">
           {/* Coluna 1: Marca & Descrição */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="space-y-3">
             <div className="flex items-center gap-3">
-              <div className="size-10 rounded-xl bg-gradient-to-br from-flame-500 to-amber-500 p-0.5 shadow-glow-orange">
-                <div className="w-full h-full bg-gas-900 rounded-[10px] flex items-center justify-center">
-                  <span className="text-xl leading-none">🐴</span>
-                </div>
-              </div>
-              <span className="text-xl font-extrabold text-white">
-                LMA <span className="text-gradient-flame">GÁS</span>
+              <img src="/logo-lma.png" alt="LMA GÁS" className="h-9 w-auto object-contain" />
+              <span className="text-xl font-black text-[#0d1b2e]">
+                LMA <span className="text-emerald-600">GÁS</span>
               </span>
             </div>
 
-            <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
-              O sistema de gestão mais completo e moderno para revendas de gás GLP e água mineral do Brasil. Tecnologia que organiza sua portaria, controla vasilhames, automatiza entregas e aumenta o seu lucro diário.
+            <p className="text-xs text-slate-500 max-w-sm leading-relaxed">
+              Sistema de gestão completo para revendas de gás GLP e água mineral. Frente de caixa, aplicativo para entregadores com mapas e cardápio digital próprio sem cobrança de taxas por pedido.
             </p>
 
-            <div className="flex items-center gap-3 pt-1">
-              <span className="inline-flex items-center gap-1.5 text-xs text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20 font-semibold">
-                <ShieldCheck className="size-3.5" /> Servidores Cloud 100% Seguros
+            <div className="pt-1">
+              <span className="inline-flex items-center gap-1.5 text-xs text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200 font-semibold">
+                <ShieldCheck className="size-3.5 text-emerald-600" /> Servidores Cloud 100% Seguros
               </span>
             </div>
           </div>
 
-          {/* Coluna 2: Navegação Rápida */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-white">
+          {/* Coluna 2: Navegação */}
+          <div className="space-y-2.5">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900">
               Navegação
             </h4>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-1.5 text-xs">
               <li>
-                <a href="#telas" className="hover:text-flame-400 transition-colors">
-                  Prints Reais do Sistema
+                <a href="#telas" className="hover:text-emerald-600 transition-colors">
+                  Telas do Sistema
                 </a>
               </li>
               <li>
-                <a href="#entregador" className="hover:text-cyan-400 transition-colors">
+                <a href="#entregador" className="hover:text-emerald-600 transition-colors">
                   App do Entregador com GPS
                 </a>
               </li>
               <li>
-                <a href="#cardapio" className="hover:text-emerald-400 transition-colors">
-                  Cardápio Digital sem Taxas
+                <a href="#cardapio" className="hover:text-emerald-600 transition-colors">
+                  Cardápio Digital sem Taxa
                 </a>
               </li>
               <li>
-                <a href="#simulador" className="hover:text-amber-400 transition-colors">
-                  Simulador de Economia
+                <a href="#inativos" className="hover:text-emerald-600 transition-colors">
+                  Clientes Inativos (+60d)
                 </a>
               </li>
               <li>
-                <a href="#planos" className="hover:text-flame-400 transition-colors">
+                <a href="#planos" className="hover:text-emerald-600 transition-colors">
                   Planos e Valores
                 </a>
               </li>
               <li>
-                <a href="#faq" className="hover:text-slate-200 transition-colors">
+                <a href="#faq" className="hover:text-emerald-600 transition-colors">
                   Perguntas Frequentes
                 </a>
               </li>
@@ -74,42 +70,42 @@ export const Footer: React.FC<FooterProps> = ({ onOpenTrial }) => {
           </div>
 
           {/* Coluna 3: Funcionalidades */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-white">
-              Soluções Especializadas
+          <div className="space-y-2.5">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900">
+              Módulos do Sistema
             </h4>
-            <ul className="space-y-2 text-xs">
-              <li>PDV &amp; Televendas em 10 Segundos</li>
-              <li>Controle de Cheios &amp; Vazios</li>
-              <li>Contratos de Comodato em PDF</li>
-              <li>CRM &amp; Lembrete de Recompra</li>
+            <ul className="space-y-1.5 text-xs text-slate-500">
+              <li>Frente de Caixa (PDV) Rápido</li>
+              <li>Gestão de Entregas e Motoboys</li>
+              <li>Cardápio Digital Próprio</li>
+              <li>Alerta de Clientes Inativos</li>
+              <li>Controle de Estoque e Mínimos</li>
               <li>Fechamento Cego de Caixa</li>
-              <li>Impressão em Bobina Térmica</li>
             </ul>
           </div>
 
-          {/* Coluna 4: Contato & Atendimento */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-white">
-              Atendimento VIP
+          {/* Coluna 4: Contato & Acesso */}
+          <div className="space-y-2.5">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900">
+              Atendimento &amp; Suporte
             </h4>
-            <div className="space-y-2.5 text-xs">
+            <div className="space-y-2 text-xs">
               <a
                 href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20o%20suporte%20do%20LMA%20G%C3%A1s."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-semibold"
+                className="flex items-center gap-1.5 text-emerald-700 font-bold hover:text-emerald-800"
               >
                 <PhoneCall className="size-3.5" />
                 WhatsApp: (11) 99999-9999
               </a>
-              <div className="text-slate-400">
-                Segunda a Sábado, das 07h às 20h
+              <div className="text-slate-500">
+                Horário comercial: Seg a Sáb, das 08h às 19h
               </div>
               <div className="pt-2">
                 <button
                   onClick={onOpenTrial}
-                  className="w-full py-2.5 px-3 rounded-lg bg-flame-600 hover:bg-flame-500 text-white font-bold text-xs shadow-md transition-all cursor-pointer text-center"
+                  className="w-full py-2 px-3 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-xs transition-colors cursor-pointer text-center"
                 >
                   Testar 7 Dias Grátis
                 </button>
@@ -118,17 +114,20 @@ export const Footer: React.FC<FooterProps> = ({ onOpenTrial }) => {
           </div>
         </div>
 
-        {/* Linha Inferior com Copyright & LMA Soluções */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        {/* Linha de Copyright */}
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400">
           <div>
-            © {new Date().getFullYear()} <strong>LMA GÁS</strong> — Uma solução do ecossistema <strong>LMA Soluções</strong>. Todos os direitos reservados.
+            © {new Date().getFullYear()} <strong>LMA GÁS</strong> • Uma solução <strong>LMA Soluções</strong>. Todos os direitos reservados.
           </div>
           <div className="flex items-center gap-4">
-            <a href="https://gas.lmaapp.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 flex items-center gap-1">
+            <a
+              href="https://gas.lmaapp.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-slate-700 flex items-center gap-1 text-slate-600 font-medium"
+            >
               Acesso ao Sistema <ExternalLink className="size-3" />
             </a>
-            <span>•</span>
-            <span>Feito com dedicação para o revendedor brasileiro</span>
           </div>
         </div>
       </div>

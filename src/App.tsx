@@ -6,9 +6,7 @@ import { ProblemSolution } from './components/ProblemSolution';
 import { RealScreenshots } from './components/RealScreenshots';
 import { EntregadorAppSection } from './components/EntregadorAppSection';
 import { CardapioDigitalSection } from './components/CardapioDigitalSection';
-import { RoiCalculator } from './components/RoiCalculator';
-import { FeaturesGrid } from './components/FeaturesGrid';
-import { Testimonials } from './components/Testimonials';
+import { ClientesInativosSection } from './components/ClientesInativosSection';
 import { PricingSection } from './components/PricingSection';
 import { FaqSection } from './components/FaqSection';
 import { CtaBanner } from './components/CtaBanner';
@@ -22,53 +20,47 @@ export default function App() {
   const handleCloseTrial = () => setTrialModalOpen(false);
 
   return (
-    <div className="min-h-screen bg-gas-950 text-slate-100 flex flex-col font-sans selection:bg-flame-500 selection:text-white">
-      {/* Barra de Navegação */}
+    <div className="min-h-screen bg-[#f8fafc] text-[#101a2c] flex flex-col font-sans selection:bg-emerald-500 selection:text-white">
+      {/* Top Navbar */}
       <Navbar onOpenTrial={handleOpenTrial} />
 
-      {/* Conteúdo Principal */}
+      {/* Main Content */}
       <main className="flex-1">
-        {/* 1. Hero Section com Showcase Interativo */}
+        {/* 1. Hero com Showcase Interativo */}
         <Hero onOpenTrial={handleOpenTrial} />
 
-        {/* 2. Barra de Bandeiras Homologadas */}
+        {/* 2. Marcas e Distribuidoras Homologadas */}
         <BrandsBar />
 
-        {/* 3. Comparativo de Dores vs Soluções */}
+        {/* 3. Dores vs Soluções Reais */}
         <ProblemSolution onOpenTrial={handleOpenTrial} />
 
-        {/* 4. PRINTS REAIS E TELAS DO SISTEMA */}
+        {/* 4. Telas Reais do Sistema (Dashboard, Nova Venda, Entregas, Clientes, Cardápio, Caixa) */}
         <RealScreenshots onOpenTrial={handleOpenTrial} />
 
-        {/* 5. APLICATIVO DO ENTREGADOR (Destaque Dedicado) */}
+        {/* 5. Vantagens do Aplicativo do Entregador com Rotas GPS */}
         <EntregadorAppSection onOpenTrial={handleOpenTrial} />
 
-        {/* 6. CARDÁPIO DIGITAL PRÓPRIO (Zero Comissões) */}
+        {/* 6. Cardápio Digital Próprio com 0% de Taxa */}
         <CardapioDigitalSection onOpenTrial={handleOpenTrial} />
 
-        {/* 7. SIMULADOR DE ECONOMIA E LUCRO (ROI) */}
-        <RoiCalculator onOpenTrial={handleOpenTrial} />
+        {/* 7. Alerta de Clientes Inativos (+60 e +90 dias sem comprar) */}
+        <ClientesInativosSection onOpenTrial={handleOpenTrial} />
 
-        {/* 8. Grade de Todas as Funcionalidades */}
-        <FeaturesGrid />
-
-        {/* 9. Depoimentos de Revendedores */}
-        <Testimonials />
-
-        {/* 10. Tabela de Planos e Preços */}
+        {/* 8. Planos e Valores Transparentes */}
         <PricingSection onOpenTrial={handleOpenTrial} />
 
-        {/* 11. Perguntas Frequentes (FAQ) */}
+        {/* 9. Perguntas Frequentes */}
         <FaqSection />
 
-        {/* 12. Chamada Final de Conversão */}
+        {/* 10. Chamada Final de Conversão */}
         <CtaBanner onOpenTrial={handleOpenTrial} />
       </main>
 
       {/* Rodapé Oficial */}
       <Footer onOpenTrial={handleOpenTrial} />
 
-      {/* Modal Interativo de Início de Teste Gratuito */}
+      {/* Modal de Teste Gratuito de 7 Dias */}
       <FreeTrialModal isOpen={trialModalOpen} onClose={handleCloseTrial} />
     </div>
   );

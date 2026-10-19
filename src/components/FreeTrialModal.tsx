@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Sparkles, Flame, CheckCircle2, ArrowRight, ShieldCheck, PhoneCall } from 'lucide-react';
+import { X, Sparkles, CheckCircle2, ArrowRight, ShieldCheck, PhoneCall } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 interface FreeTrialModalProps {
@@ -21,15 +21,14 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({ isOpen, onClose 
     e.preventDefault();
     if (!nome || !whatsapp) return;
 
-    // Disparar confetti de celebração
     try {
       confetti({
-        particleCount: 100,
-        spread: 70,
+        particleCount: 80,
+        spread: 60,
         origin: { y: 0.6 },
       });
     } catch (e) {
-      // Ignorar se confetti falhar
+      // Ignora se confetti falhar
     }
 
     setSubmitted(true);
@@ -42,52 +41,47 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({ isOpen, onClose 
 
   const handleOpenWhatsApp = () => {
     const msg = encodeURIComponent(
-      `Olá! Meu nome é ${nome}, da revenda ${revenda || 'de Gás'} em ${cidade || 'Brasil'}. Gostaria de iniciar meu teste gratuito de 7 dias do LMA Gás (Bandeira: ${bandeira})!`
+      `Olá! Meu nome é ${nome}, da revenda ${revenda || 'de Gás'} em ${cidade || 'Brasil'}. Gostaria de ativar meu teste gratuito de 7 dias do LMA Gás (Bandeira: ${bandeira})!`
     );
     window.open(`https://wa.me/5511999999999?text=${msg}`, '_blank');
     onClose();
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-fade-in">
-      <div className="relative w-full max-w-lg rounded-3xl bg-gas-950 border border-slate-700 shadow-2xl p-6 sm:p-8 overflow-hidden text-slate-100">
-        {/* Glow decorativo */}
-        <div className="absolute top-0 right-0 w-48 h-48 bg-flame-500/20 blur-[80px] pointer-events-none rounded-full" />
-
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs animate-fade-in">
+      <div className="relative w-full max-w-lg rounded-2xl bg-white border border-slate-200 shadow-2xl p-6 sm:p-8 text-slate-800">
         {/* Botão Fechar */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-1.5 rounded-full bg-gas-900 text-slate-400 hover:text-white hover:bg-gas-800 transition-colors cursor-pointer"
+          className="absolute top-5 right-5 p-1.5 rounded-full bg-slate-100 text-slate-500 hover:text-slate-800 hover:bg-slate-200 transition-colors cursor-pointer"
         >
           <X className="size-5" />
         </button>
 
         {!submitted ? (
           <div>
-            {/* Header do Modal */}
-            <div className="flex items-center gap-2.5 mb-2">
-              <div className="size-10 rounded-xl bg-flame-500/20 border border-flame-500/30 flex items-center justify-center text-flame-400 font-bold">
-                <Flame className="size-5 fill-amber-400 text-amber-400" />
-              </div>
+            {/* Header com Logo Oficial da LMA */}
+            <div className="flex items-center gap-3 mb-2">
+              <img src="/logo-lma.png" alt="LMA GÁS" className="h-10 w-auto object-contain" />
               <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-flame-400">
-                  Acesso Imediato • 7 Dias Grátis
+                <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                  7 Dias Grátis • Sem Cartão
                 </span>
-                <h3 className="text-xl sm:text-2xl font-extrabold text-white">
-                  Iniciar Demonstração do LMA GÁS
+                <h3 className="text-xl sm:text-2xl font-black text-[#0d1b2e] mt-1">
+                  Iniciar Teste do LMA GÁS
                 </h3>
               </div>
             </div>
 
-            <p className="text-xs sm:text-sm text-slate-300 mt-2 mb-6">
-              Preencha abaixo para liberar seu teste gratuito sem pedir cartão de crédito.
+            <p className="text-xs sm:text-sm text-slate-600 mt-2 mb-5">
+              Preencha os dados da sua revenda para liberar o seu acesso de demonstração.
             </p>
 
-            {/* Formulário de Cadastro */}
-            <form onSubmit={handleSubmit} className="space-y-4 text-xs sm:text-sm">
+            {/* Formulário */}
+            <form onSubmit={handleSubmit} className="space-y-3.5 text-xs sm:text-sm">
               <div>
-                <label className="block text-slate-300 font-semibold mb-1">
-                  Seu Nome Completo: <span className="text-flame-400">*</span>
+                <label className="block text-slate-700 font-semibold mb-1">
+                  Seu Nome Completo: <span className="text-emerald-600">*</span>
                 </label>
                 <input
                   type="text"
@@ -95,27 +89,27 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({ isOpen, onClose 
                   placeholder="Ex: Roberto Antônio Silva"
                   value={nome}
                   onChange={(e) => setNome(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl bg-gas-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-flame-500 transition-colors"
+                  className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors"
                 />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-slate-300 font-semibold mb-1">
+                  <label className="block text-slate-700 font-semibold mb-1">
                     Nome da Revenda:
                   </label>
                   <input
                     type="text"
-                    placeholder="Ex: Bertoni Gás Express"
+                    placeholder="Ex: Central Gás e Água"
                     value={revenda}
                     onChange={(e) => setRevenda(e.target.value)}
-                    className="w-full px-4 py-2.5 rounded-xl bg-gas-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-flame-500 transition-colors"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-slate-300 font-semibold mb-1">
-                    WhatsApp: <span className="text-flame-400">*</span>
+                  <label className="block text-slate-700 font-semibold mb-1">
+                    WhatsApp: <span className="text-emerald-600">*</span>
                   </label>
                   <input
                     type="tel"
@@ -123,14 +117,14 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({ isOpen, onClose 
                     placeholder="(11) 99999-9999"
                     value={whatsapp}
                     onChange={(e) => setWhatsapp(e.target.value)}
-                    className="w-full px-4 py-2.5 rounded-xl bg-gas-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-flame-500 transition-colors"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-slate-300 font-semibold mb-1">
+                  <label className="block text-slate-700 font-semibold mb-1">
                     Cidade / UF:
                   </label>
                   <input
@@ -138,18 +132,18 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({ isOpen, onClose 
                     placeholder="Ex: Franco da Rocha - SP"
                     value={cidade}
                     onChange={(e) => setCidade(e.target.value)}
-                    className="w-full px-4 py-2.5 rounded-xl bg-gas-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-flame-500 transition-colors"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-slate-300 font-semibold mb-1">
-                    Bandeira Principal:
+                  <label className="block text-slate-700 font-semibold mb-1">
+                    Distribuidora:
                   </label>
                   <select
                     value={bandeira}
                     onChange={(e) => setBandeira(e.target.value)}
-                    className="w-full px-4 py-2.5 rounded-xl bg-gas-900 border border-slate-700 text-white focus:outline-none focus:border-flame-500 transition-colors cursor-pointer"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors cursor-pointer"
                   >
                     <option value="Ultragaz">Ultragaz</option>
                     <option value="Liquigás">Liquigás</option>
@@ -166,66 +160,66 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({ isOpen, onClose 
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-xl bg-gradient-to-r from-flame-600 to-amber-600 hover:from-flame-500 hover:to-amber-500 text-white font-extrabold text-sm shadow-glow-orange cursor-pointer transition-all flex items-center justify-center gap-2"
+                  className="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md transition-all cursor-pointer flex items-center justify-center gap-2"
                 >
-                  <Sparkles className="size-4 text-amber-200" />
-                  LIBERAR MEU ACESSO DE 7 DIAS GRÁTIS
+                  <Sparkles className="size-4 text-emerald-200" />
+                  LIBERAR ACESSO DE 7 DIAS GRÁTIS
                   <ArrowRight className="size-4" />
                 </button>
               </div>
 
-              <div className="text-center text-[11px] text-slate-400 flex items-center justify-center gap-1.5 pt-1">
-                <ShieldCheck className="size-4 text-emerald-400" />
-                Seus dados estão 100% seguros • Sem letras miúdas
+              <div className="text-center text-[11px] text-slate-500 flex items-center justify-center gap-1.5 pt-1">
+                <ShieldCheck className="size-4 text-emerald-600" />
+                Sem cartão de crédito • Acesso em nuvem seguro
               </div>
             </form>
           </div>
         ) : (
-          /* Tela de Sucesso */
-          <div className="text-center py-4 space-y-5 animate-fade-in">
-            <div className="size-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 mx-auto flex items-center justify-center text-3xl">
-              🎉
+          /* Sucesso */
+          <div className="text-center py-4 space-y-4 animate-fade-in">
+            <div className="size-14 rounded-full bg-emerald-100 text-emerald-600 mx-auto flex items-center justify-center text-2xl font-bold">
+              ✓
             </div>
 
             <div>
-              <h3 className="text-2xl font-black text-white">
-                Parabéns, {nome.split(' ')[0]}!
+              <h3 className="text-2xl font-black text-[#0d1b2e]">
+                Tudo pronto, {nome.split(' ')[0]}!
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 mt-2">
-                Seu acesso para a revenda <strong>{revenda || 'de Gás'}</strong> foi pré-aprovado com sucesso!
+              <p className="text-xs sm:text-sm text-slate-600 mt-1">
+                Seu acesso para a revenda <strong>{revenda || 'de Gás'}</strong> foi preparado.
               </p>
             </div>
 
-            <div className="p-4 rounded-2xl bg-gas-900 border border-slate-800 text-xs text-left space-y-2">
-              <div className="flex items-center gap-2 font-bold text-emerald-400">
+            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-left space-y-2">
+              <div className="flex items-center gap-2 font-bold text-emerald-700">
                 <CheckCircle2 className="size-4 shrink-0" />
-                <span>Ambiente de demonstração liberado na nuvem</span>
+                <span>Ambiente de demonstração disponível</span>
               </div>
-              <div className="flex items-center gap-2 font-bold text-cyan-400">
+              <div className="flex items-center gap-2 font-bold text-blue-700">
                 <CheckCircle2 className="size-4 shrink-0" />
-                <span>Aplicativo do Entregador habilitado</span>
+                <span>Aplicativo do Entregador com rotas ativo</span>
               </div>
-              <div className="flex items-center gap-2 font-bold text-amber-400">
+              <div className="flex items-center gap-2 font-bold text-amber-700">
                 <CheckCircle2 className="size-4 shrink-0" />
-                <span>Cardápio Digital configurado para {bandeira}</span>
+                <span>Cardápio digital próprio configurado para {bandeira}</span>
               </div>
             </div>
 
-            <div className="space-y-3 pt-2">
+            <div className="space-y-2.5 pt-2">
               <button
                 onClick={handleGoToSystem}
-                className="w-full py-4 rounded-xl bg-gradient-to-r from-flame-600 to-amber-600 text-white font-black text-sm shadow-glow-orange cursor-pointer hover:scale-102 transition-all flex items-center justify-center gap-2"
+                className="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm shadow-md cursor-pointer transition-all flex items-center justify-center gap-2"
               >
-                <span>🚀 ACESSAR O SISTEMA LMA GÁS AGORA</span>
+                <span>ACESSAR O SISTEMA LMA GÁS</span>
                 <ArrowRight className="size-4" />
               </button>
 
               <button
                 onClick={handleOpenWhatsApp}
-                className="w-full py-3.5 rounded-xl border border-emerald-500/60 bg-emerald-950/30 hover:bg-emerald-950/60 text-emerald-300 font-bold text-xs flex items-center justify-center gap-2 transition-all cursor-pointer"
+                className="w-full py-3 rounded-xl border border-slate-300 hover:bg-slate-50 text-slate-700 font-bold text-xs flex items-center justify-center gap-2 transition-all cursor-pointer"
               >
-                <PhoneCall className="size-4 text-emerald-400" />
-                Falar com a equipe no WhatsApp para ativar minha revenda
+                <PhoneCall className="size-4 text-emerald-600" />
+                Falar com consultor no WhatsApp
               </button>
             </div>
           </div>
