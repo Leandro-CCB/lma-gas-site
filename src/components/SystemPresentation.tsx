@@ -28,30 +28,30 @@ export const SystemPresentation: React.FC<SystemPresentationProps> = ({ onOpenTr
   const [activeTab, setActiveTab] = useState<'dashboard' | 'venda' | 'entregas' | 'app_entregador' | 'inativos' | 'cardapio' | 'caixa'>('dashboard');
 
   return (
-    <section id="demonstracao" className="py-16 sm:py-24 bg-white">
+    <section id="demonstracao" className="py-14 sm:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Cabeçalho da Seção */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
-            Interface e Recursos Reais
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <span className="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+            Operação Prática de Revenda
           </span>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0d1b2e] mt-3 tracking-tight">
+          <h2 className="text-2xl sm:text-4xl font-black text-[#0d1b2e] mt-3 tracking-tight">
             Tudo o que sua revenda precisa em um só lugar.
           </h2>
-          <p className="mt-3 text-base text-slate-600 leading-relaxed">
+          <p className="mt-2.5 text-base text-slate-600 leading-relaxed font-normal">
             Um sistema completo, fácil de usar e desenvolvido especialmente para a realidade das revendas de gás e água mineral.
           </p>
         </div>
 
-        {/* ── 4 CARDS EM ANIMAÇÃO COLORIDA NA ORDEM SOLICITADA ── */}
+        {/* ── 4 CARDS EM ILUSTRAÇÃO COLORIDA NA ORDEM EXATA SOLICITADA PELO CHEFE ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {/* 1. ESTOQUE DE GÁS */}
-          <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs group hover:border-emerald-300 transition-all">
-            <div className="aspect-[16/10] overflow-hidden bg-slate-50">
+          <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-md hover:border-emerald-300 transition-all">
+            <div className="aspect-[4/3] bg-emerald-50/40 p-4 flex items-center justify-center border-b border-slate-100">
               <img
-                src="/images/estoque-gas-anime.svg"
-                alt="Estoque de gás organizado com botijões em gaiolas"
-                className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
+                src="/images/card-1-estoque.svg"
+                alt="Estoque de gás organizado com botijões cheios e vazios"
+                className="w-full h-full object-contain max-h-[180px]"
               />
             </div>
             <div className="p-4">
@@ -60,58 +60,58 @@ export const SystemPresentation: React.FC<SystemPresentationProps> = ({ onOpenTr
               </span>
               <h4 className="font-bold text-sm text-[#0d1b2e] mt-1.5">Estoque de Gás</h4>
               <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                Controle o saldo de botijões cheios e vazios da sua revenda em tempo real, com alerta de reposição de carga.
+                Controle o saldo de botijões cheios e vazios (P13, P20, P45) e galões de água com alerta de reposição de carga.
               </p>
             </div>
           </div>
 
           {/* 2. ENTREGADOR UNIFORMIZADO COM BOTIJÃO NOS OMBROS */}
-          <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs group hover:border-emerald-300 transition-all">
-            <div className="aspect-[16/10] overflow-hidden bg-slate-50">
+          <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-md hover:border-emerald-300 transition-all">
+            <div className="aspect-[4/3] bg-blue-50/40 p-4 flex items-center justify-center border-b border-slate-100">
               <img
-                src="/images/entregador-ombros-anime.svg"
+                src="/images/card-2-entregador.svg"
                 alt="Entregador uniformizado carregando botijão de gás nos ombros"
-                className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
+                className="w-full h-full object-contain max-h-[180px]"
               />
             </div>
             <div className="p-4">
               <span className="text-[10px] font-black uppercase tracking-wider text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
-                2. Entrega Rápida
+                2. Entrega Ágil
               </span>
               <h4 className="font-bold text-sm text-[#0d1b2e] mt-1.5">Entregador com Botijão</h4>
               <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                Despache botijões com rapidez para os entregadores e acompanhe as rotas no Waze e Maps pelo celular.
+                Despache pedidos rapidamente para os entregadores com rotas no Waze e Google Maps e baixa no celular.
               </p>
             </div>
           </div>
 
           {/* 3. ATENDENTE LIGANDO PARA O CLIENTE */}
-          <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs group hover:border-emerald-300 transition-all">
-            <div className="aspect-[16/10] overflow-hidden bg-slate-50">
+          <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-md hover:border-emerald-300 transition-all">
+            <div className="aspect-[4/3] bg-rose-50/40 p-4 flex items-center justify-center border-b border-slate-100">
               <img
-                src="/images/atendente-cliente-anime.svg"
-                alt="Atendente de revenda ligando para o cliente para reativar pedido de gás"
-                className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
+                src="/images/card-3-atendente.svg"
+                alt="Atendente de revenda ligando para cliente inativo sem comprar há mais de 60 dias"
+                className="w-full h-full object-contain max-h-[180px]"
               />
             </div>
             <div className="p-4">
               <span className="text-[10px] font-black uppercase tracking-wider text-rose-700 bg-rose-50 px-2 py-0.5 rounded border border-rose-200">
-                3. Clientes (+60d)
+                3. Clientes Inativos (+60d)
               </span>
               <h4 className="font-bold text-sm text-[#0d1b2e] mt-1.5">Atendente Ligando</h4>
               <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                Identifique clientes que estão há mais de 60 dias sem comprar e ligue no momento exato antes de acabar o gás.
+                Identifique clientes sumidos há mais de 60 e 90 dias e ligue ou envie WhatsApp no momento exato de repor o gás.
               </p>
             </div>
           </div>
 
           {/* 4. CONTROLE DE CONTAS A PAGAR E FLUXO DE CAIXA */}
-          <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs group hover:border-emerald-300 transition-all">
-            <div className="aspect-[16/10] overflow-hidden bg-slate-50">
+          <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-md hover:border-emerald-300 transition-all">
+            <div className="aspect-[4/3] bg-amber-50/40 p-4 flex items-center justify-center border-b border-slate-100">
               <img
-                src="/images/fluxo-caixa-anime.svg"
+                src="/images/card-4-financeiro.svg"
                 alt="Controle financeiro de contas a pagar e fluxo de caixa da revenda de gás"
-                className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
+                className="w-full h-full object-contain max-h-[180px]"
               />
             </div>
             <div className="p-4">
@@ -120,13 +120,13 @@ export const SystemPresentation: React.FC<SystemPresentationProps> = ({ onOpenTr
               </span>
               <h4 className="font-bold text-sm text-[#0d1b2e] mt-1.5">Contas e Fluxo de Caixa</h4>
               <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                Controle entradas, saídas, fechamento cego de turno e garanta que nenhuma conta fique vencida.
+                Monitore entradas, saídas, fechamento cego de turno e garanta que nenhuma conta fique vencida.
               </p>
             </div>
           </div>
         </div>
 
-        {/* ── SEÇÃO DIVIDIDA: O QUE ELE FAZ PELA REVENDA vs PRINTS REAIS DO PROGRAMA ── */}
+        {/* ── SEÇÃO DIVIDIDA: O QUE ELE FAZ PELA REVENDA vs TELAS REAIS DO PROGRAMA ── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Lado Esquerdo: O Que o Sistema Faz Pela Sua Revenda */}
           <div className="lg:col-span-5 space-y-4">
@@ -136,7 +136,7 @@ export const SystemPresentation: React.FC<SystemPresentationProps> = ({ onOpenTr
                   Benefícios Práticos
                 </span>
                 <h3 className="text-xl font-bold text-[#0d1b2e] mt-2">
-                  Como o LMA GÁS transforma a sua rotina:
+                  O que o LMA GÁS faz pela sua revenda:
                 </h3>
                 <p className="text-xs text-slate-500 mt-1">
                   Desenvolvido para eliminar o papel, as anotações perdidas e os erros de caixa.
@@ -160,7 +160,7 @@ export const SystemPresentation: React.FC<SystemPresentationProps> = ({ onOpenTr
               <div className="pt-3 border-t border-slate-200">
                 <button
                   onClick={onOpenTrial}
-                  className="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-xs cursor-pointer transition-all"
+                  className="w-full py-3 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-sm cursor-pointer transition-all"
                 >
                   <Sparkles className="size-3.5 text-emerald-200" />
                   Testar Na Minha Revenda (7 Dias Grátis)
