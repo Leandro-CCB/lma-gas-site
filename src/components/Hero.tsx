@@ -19,7 +19,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
               <span>{HERO_DATA.badge}</span>
             </div>
 
-            {/* Título Principal em 3 Linhas Conforme Referência */}
+            {/* Título Principal */}
             <h1 className="text-3xl sm:text-5xl lg:text-5xl font-black text-[#0d1b2e] tracking-tight leading-[1.15]">
               Sua revenda de gás <br className="hidden sm:inline" />
               <span className="text-emerald-600">mais organizada,</span> <br className="hidden sm:inline" />
@@ -61,23 +61,19 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
             </div>
           </div>
 
-          {/* Lado Direito: Fotografia Real de Revenda de Gás e Entregador com Botijão */}
+          {/* Lado Direito: Ilustração Animada do Entregador deixando o Gás para a Dona de Casa */}
           <div className="lg:col-span-6 flex justify-center">
             <div className="relative w-full max-w-lg">
-              {/* Moldura da Fotografia Real */}
-              <div className="relative rounded-2xl overflow-hidden shadow-md border border-slate-200 bg-slate-50 aspect-[4/3] sm:aspect-[16/11]">
+              {/* Moldura da Ilustração com Cantos Arredondados e Sombra */}
+              <div className="relative rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-gradient-to-b from-sky-50 to-amber-50 aspect-[4/3] sm:aspect-[16/11]">
                 <img
-                  src="/images/entregador-botijao.jpg"
-                  alt="Entregador uniformizado realizando a entrega de botijão de gás na residência do cliente"
-                  className="w-full h-full object-cover object-top"
+                  src="/images/hero-entrega-anime.svg"
+                  alt="Entregador uniformizado deixando o botijão de gás para a dona de casa"
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-4 left-4 right-4 text-white text-xs sm:text-sm font-medium drop-shadow-md">
-                  Entrega de botijão de gás organizada e atendimento rápido na porta do cliente.
-                </div>
               </div>
 
-              {/* Pill Flutuante de Avaliação / Clientes Satisfeitos (Conforme Imagem de Referência) */}
+              {/* Pill Flutuante Superior */}
               <div className="absolute -top-4 -right-2 sm:-right-4 bg-white px-4 py-2.5 rounded-xl border border-slate-200 shadow-lg flex items-center gap-2.5">
                 <div className="flex text-amber-400">
                   {[...Array(5)].map((_, i) => (
@@ -96,7 +92,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                 </div>
                 <div>
                   <div className="text-xs font-bold text-slate-900">Do pedido à entrega</div>
-                  <div className="text-[11px] text-slate-500">Agilidade no balcão e no entregador</div>
+                  <div className="text-[11px] text-slate-500">Agilidade no balcão e no motoboy</div>
                 </div>
               </div>
             </div>

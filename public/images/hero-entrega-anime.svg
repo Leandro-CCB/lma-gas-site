@@ -1,0 +1,291 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="60%" stop-color="#bae6fd" />
+      <stop offset="100%" stop-color="#fed7aa" />
+    </linearGradient>
+    <linearGradient id="wallGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdf4ff" />
+      <stop offset="100%" stop-color="#f5e8ff" />
+    </linearGradient>
+    <linearGradient id="doorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#b45309" />
+      <stop offset="100%" stop-color="#78350f" />
+    </linearGradient>
+    <linearGradient id="cylinderBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e3a8a" />
+      <stop offset="35%" stop-color="#3b82f6" />
+      <stop offset="55%" stop-color="#60a5fa" />
+      <stop offset="70%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="cylinderRim" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#94a3b8" />
+      <stop offset="50%" stop-color="#f1f5f9" />
+      <stop offset="100%" stop-color="#64748b" />
+    </linearGradient>
+    <linearGradient id="skinBoy" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffedd5" />
+      <stop offset="100%" stop-color="#fed7aa" />
+    </linearGradient>
+    <linearGradient id="hairBoy" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3f2e24" />
+      <stop offset="100%" stop-color="#1c130d" />
+    </linearGradient>
+    <linearGradient id="shirtBoy" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+    <linearGradient id="skinWoman" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff1f2" />
+      <stop offset="100%" stop-color="#fecdd3" />
+    </linearGradient>
+    <linearGradient id="hairWoman" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7c2d12" />
+      <stop offset="100%" stop-color="#451a03" />
+    </linearGradient>
+    <linearGradient id="apronGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="100%" stop-color="#fde047" />
+    </linearGradient>
+    <linearGradient id="grassGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4ade80" />
+      <stop offset="100%" stop-color="#16a34a" />
+    </linearGradient>
+    <linearGradient id="floorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e2e8f0" />
+      <stop offset="100%" stop-color="#cbd5e1" />
+    </linearGradient>
+    <filter id="animeGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-opacity="0.18" flood-color="#0f172a"/>
+    </filter>
+  </defs>
+
+  <!-- SKY BACKGROUND -->
+  <rect width="880" height="600" fill="url(#skyGrad)" />
+  
+  <!-- SUN GLOW -->
+  <circle cx="750" cy="90" r="85" fill="#fef08a" opacity="0.6" filter="url(#animeGlow)" />
+  
+  <!-- ANIME CLOUDS -->
+  <path d="M 60,110 Q 90,80 130,95 Q 160,75 190,95 Q 220,110 200,135 Q 160,145 100,140 Q 50,135 60,110 Z" fill="#ffffff" opacity="0.85" />
+  <path d="M 520,70 Q 550,45 590,60 Q 620,40 650,60 Q 680,75 660,100 Q 620,110 560,105 Q 510,100 520,70 Z" fill="#ffffff" opacity="0.85" />
+
+  <!-- DISTANT ANIME NEIGHBORHOOD HOUSES & TREES -->
+  <polygon points="20,290 80,240 140,290" fill="#f87171" opacity="0.8" />
+  <rect x="35" y="290" width="90" height="70" fill="#fef3c7" opacity="0.8" />
+  <circle cx="170" cy="275" r="35" fill="#22c55e" opacity="0.75" />
+  <circle cx="210" cy="285" r="30" fill="#16a34a" opacity="0.75" />
+  
+  <!-- RESIDENTIAL HOUSE FRONT PORCH -->
+  <rect x="0" y="350" width="880" height="250" fill="url(#grassGrad)" />
+  <polygon points="360,180 880,180 880,240 360,240" fill="#fb7185" />
+  <rect x="380" y="240" width="500" height="260" fill="url(#wallGrad)" />
+  
+  <!-- PORCH FLOOR TILES -->
+  <polygon points="120,440 880,440 880,580 80,580" fill="url(#floorGrad)" />
+  <line x1="80" y1="480" x2="880" y2="480" stroke="#94a3b8" stroke-width="2" opacity="0.4" />
+  <line x1="80" y1="530" x2="880" y2="530" stroke="#94a3b8" stroke-width="2" opacity="0.4" />
+  <line x1="280" y1="440" x2="220" y2="580" stroke="#94a3b8" stroke-width="2" opacity="0.4" />
+  <line x1="480" y1="440" x2="420" y2="580" stroke="#94a3b8" stroke-width="2" opacity="0.4" />
+  <line x1="680" y1="440" x2="620" y2="580" stroke="#94a3b8" stroke-width="2" opacity="0.4" />
+
+  <!-- HOUSE ENTRANCE DOOR -->
+  <rect x="620" y="260" width="160" height="220" rx="8" fill="url(#doorGrad)" stroke="#451a03" stroke-width="4" />
+  <rect x="635" y="275" width="60" height="85" rx="4" fill="#9a3412" opacity="0.7" />
+  <rect x="705" y="275" width="60" height="85" rx="4" fill="#9a3412" opacity="0.7" />
+  <rect x="635" y="375" width="60" height="90" rx="4" fill="#9a3412" opacity="0.7" />
+  <rect x="705" y="375" width="60" height="90" rx="4" fill="#9a3412" opacity="0.7" />
+  <circle cx="640" cy="370" r="5" fill="#fef08a" stroke="#ca8a04" stroke-width="2" />
+
+  <!-- POTTED PLANT AT THE PORCH -->
+  <ellipse cx="820" cy="470" rx="28" ry="12" fill="#0f172a" opacity="0.2" />
+  <polygon points="800,470 840,470 832,430 808,430" fill="#ea580c" />
+  <circle cx="820" cy="405" r="25" fill="#22c55e" />
+  <circle cx="805" cy="415" r="18" fill="#16a34a" />
+  <circle cx="835" cy="415" r="18" fill="#15803d" />
+
+  <!-- DELIVERY MOTORCYCLE WITH GAS RACK IN BACKGROUND (LEFT) -->
+  <g opacity="0.95" transform="translate(40, 310) scale(0.85)">
+    <!-- Wheels -->
+    <circle cx="100" cy="170" r="42" fill="#1e293b" stroke="#64748b" stroke-width="6" />
+    <circle cx="100" cy="170" r="22" fill="#cbd5e1" />
+    <circle cx="270" cy="170" r="42" fill="#1e293b" stroke="#64748b" stroke-width="6" />
+    <circle cx="270" cy="170" r="22" fill="#cbd5e1" />
+    <!-- Frame -->
+    <path d="M 100,170 L 160,140 L 210,140 L 270,170" stroke="#0284c7" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M 160,140 L 180,90 L 140,85" stroke="#0284c7" stroke-width="10" stroke-linecap="round" />
+    <!-- Gas rack side frame carrying botijão -->
+    <rect x="50" y="90" width="70" height="65" rx="6" fill="#0284c7" stroke="#0369a1" stroke-width="3" />
+    <!-- Blue Gas Cylinder in motorcycle rack -->
+    <rect x="60" y="98" width="50" height="50" rx="14" fill="url(#cylinderBlue)" />
+    <ellipse cx="85" cy="98" rx="16" ry="5" fill="url(#cylinderRim)" />
+    <!-- Handlebar & Headlight -->
+    <circle cx="135" cy="85" r="10" fill="#fef08a" stroke="#eab308" stroke-width="2" />
+  </g>
+
+  <!-- SHADOWS OF CHARACTERS & CYLINDER -->
+  <ellipse cx="370" cy="545" rx="55" ry="16" fill="#0f172a" opacity="0.25" />
+  <ellipse cx="480" cy="540" rx="42" ry="14" fill="#0f172a" opacity="0.28" />
+  <ellipse cx="610" cy="535" rx="50" ry="15" fill="#0f172a" opacity="0.25" />
+
+  <!-- ========================================== -->
+  <!-- CHARACTER 1: HOUSEWIFE (DONA DE CASA ANIME) -->
+  <!-- ========================================== -->
+  <g transform="translate(540, 210)" filter="url(#softShadow)">
+    <!-- Back Hair -->
+    <path d="M 60,70 Q 15,100 25,180 Q 55,200 70,170 Q 115,200 135,160 Q 145,100 100,70 Z" fill="url(#hairWoman)" />
+    <!-- Legs / Slippers -->
+    <rect x="60" y="270" width="16" height="50" rx="6" fill="url(#skinWoman)" />
+    <rect x="86" y="270" width="16" height="50" rx="6" fill="url(#skinWoman)" />
+    <ellipse cx="68" cy="320" rx="14" ry="7" fill="#f43f5e" />
+    <ellipse cx="94" cy="320" rx="14" ry="7" fill="#f43f5e" />
+    <!-- Dress / Blouse (Soft Coral Pink) -->
+    <path d="M 45,140 Q 80,130 115,140 L 130,270 Q 80,285 30,270 Z" fill="#fda4af" />
+    <!-- Cute Yellow Kitchen Apron -->
+    <path d="M 55,150 L 105,150 L 115,255 L 45,255 Z" fill="url(#apronGrad)" stroke="#eab308" stroke-width="2" />
+    <!-- Apron Pocket with Heart -->
+    <rect x="68" y="195" width="26" height="22" rx="4" fill="#ffffff" opacity="0.9" />
+    <path d="M 76,206 Q 81,200 81,204 Q 81,200 86,206 Q 81,214 81,214 Z" fill="#f43f5e" />
+    <!-- Arms welcoming delivery -->
+    <path d="M 48,150 Q 25,180 20,205 Q 25,215 35,210 Q 45,190 60,170" fill="url(#skinWoman)" stroke="#fda4af" stroke-width="2" />
+    <path d="M 112,150 Q 135,180 140,205 Q 135,215 125,210 Q 115,190 100,170" fill="url(#skinWoman)" stroke="#fda4af" stroke-width="2" />
+    <!-- Neck -->
+    <rect x="73" y="115" width="16" height="20" rx="4" fill="url(#skinWoman)" />
+    <!-- Face / Head -->
+    <path d="M 50,75 Q 80,60 110,75 Q 115,115 81,130 Q 46,115 50,75 Z" fill="url(#skinWoman)" />
+    <!-- Anime Blush Cheeks -->
+    <ellipse cx="62" cy="104" rx="7" ry="4" fill="#fb7185" opacity="0.6" />
+    <ellipse cx="100" cy="104" rx="7" ry="4" fill="#fb7185" opacity="0.6" />
+    <!-- Big Expressive Anime Eyes (Smiling closed curved lines) -->
+    <path d="M 57,94 Q 65,86 73,94" stroke="#451a03" stroke-width="3" stroke-linecap="round" fill="none" />
+    <path d="M 89,94 Q 97,86 105,94" stroke="#451a03" stroke-width="3" stroke-linecap="round" fill="none" />
+    <!-- Sweet Anime Smile -->
+    <path d="M 74,112 Q 81,120 88,112" stroke="#e11d48" stroke-width="3" stroke-linecap="round" fill="none" />
+    <!-- Cute Nose dot -->
+    <circle cx="81" cy="103" r="1.5" fill="#f43f5e" />
+    <!-- Front Hair Bangs -->
+    <path d="M 48,70 Q 70,85 78,70 Q 90,88 112,68 Q 118,100 115,110 Q 110,60 80,55 Q 50,60 48,70 Z" fill="url(#hairWoman)" />
+  </g>
+
+  <!-- ============================================== -->
+  <!-- CENTERPIECE: METALLIC BLUE P13 GAS CYLINDER    -->
+  <!-- ============================================== -->
+  <g transform="translate(440, 360)" filter="url(#softShadow)">
+    <!-- Base Shadow -->
+    <ellipse cx="40" cy="165" rx="42" ry="12" fill="#0f172a" opacity="0.3" />
+    <!-- Cylinder Bottom Ring Foot -->
+    <path d="M 10,150 L 70,150 A 30,12 0 0,1 10,150 Z" fill="#1e293b" />
+    <rect x="12" y="148" width="56" height="14" rx="4" fill="url(#cylinderRim)" />
+    <!-- Cylinder Main Body (Bulbous P13 Shape) -->
+    <rect x="5" y="45" width="70" height="105" rx="24" fill="url(#cylinderBlue)" stroke="#1e3a8a" stroke-width="1.5" />
+    <!-- Center Weld Seam -->
+    <line x1="5" y1="95" x2="75" y2="95" stroke="#1d4ed8" stroke-width="3" opacity="0.7" />
+    <line x1="5" y1="96" x2="75" y2="96" stroke="#93c5fd" stroke-width="1.5" opacity="0.5" />
+    <!-- Specular Highlight (Shiny Metal Reflection) -->
+    <path d="M 22,48 Q 28,95 24,142" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.55" />
+    <!-- Cylinder Top Shoulder -->
+    <ellipse cx="40" cy="45" rx="30" ry="12" fill="url(#cylinderBlue)" />
+    <!-- Valve Collar Handle (Alça do botijão) -->
+    <path d="M 20,40 L 20,18 Q 40,8 60,18 L 60,40 Z" fill="none" stroke="url(#cylinderRim)" stroke-width="7" stroke-linecap="round" />
+    <!-- Brass Valve with Green Safety Seal (Lacre de Segurança) -->
+    <rect x="34" y="24" width="12" height="15" rx="3" fill="#10b981" />
+    <circle cx="40" cy="20" r="4" fill="#fbbf24" stroke="#d97706" stroke-width="1.5" />
+    <!-- LMA Flame Stamp on Cylinder -->
+    <circle cx="40" cy="80" r="14" fill="#ffffff" opacity="0.9" />
+    <path d="M 40,71 Q 46,78 43,84 Q 40,88 37,84 Q 34,79 40,71 Z" fill="#0284c7" />
+    <path d="M 40,75 Q 43,80 41,84 Q 40,86 38,84 Q 37,81 40,75 Z" fill="#10b981" />
+  </g>
+
+  <!-- ============================================== -->
+  <!-- CHARACTER 2: DELIVERY BOY (ENTREGADOR ANIME)   -->
+  <!-- ============================================== -->
+  <g transform="translate(300, 180)" filter="url(#softShadow)">
+    <!-- Legs / Work Trousers -->
+    <rect x="42" y="280" width="22" height="85" rx="6" fill="#1e293b" />
+    <rect x="74" y="280" width="22" height="85" rx="6" fill="#1e293b" />
+    <!-- Safety Boots (Botinas de Trabalho) -->
+    <path d="M 38,360 L 68,360 L 70,378 L 34,378 Z" fill="#0f172a" stroke="#d97706" stroke-width="2" />
+    <path d="M 70,360 L 100,360 L 102,378 L 66,378 Z" fill="#0f172a" stroke="#d97706" stroke-width="2" />
+    
+    <!-- Torso / Blue Uniform Polo -->
+    <path d="M 32,150 L 104,150 L 100,285 L 36,285 Z" fill="url(#shirtBoy)" stroke="#0369a1" stroke-width="2" />
+    <!-- Emerald Collar -->
+    <polygon points="48,150 68,168 88,150 78,144 58,144" fill="#10b981" />
+    <line x1="68" y1="168" x2="68" y2="200" stroke="#0f172a" stroke-width="2" opacity="0.3" />
+    <!-- Flame Badge on Chest -->
+    <circle cx="50" cy="180" r="7" fill="#ffffff" />
+    <path d="M 50,175 Q 53,179 51,183 Q 50,185 48,183 Q 47,180 50,175 Z" fill="#10b981" />
+
+    <!-- Left Arm: Handing/Supporting Cylinder -->
+    <path d="M 98,160 Q 135,185 145,215 Q 140,225 125,225 Q 115,200 88,180" fill="url(#skinBoy)" />
+    <!-- Blue Work Glove holding the cylinder collar -->
+    <ellipse cx="142" cy="220" rx="9" ry="8" fill="#0284c7" stroke="#0369a1" stroke-width="2" />
+
+    <!-- Right Arm: Giving Thumbs Up! (Anime Style) -->
+    <path d="M 35,160 Q 5,180 0,160 Q 0,150 15,145 Q 25,150 35,170" fill="url(#skinBoy)" />
+    <!-- Hand Thumbs Up -->
+    <circle cx="2" cy="154" r="7" fill="url(#skinBoy)" />
+    <path d="M 2,154 L 2,142 Q 6,142 6,150 Z" fill="url(#skinBoy)" stroke="#ea580c" stroke-width="1.5" />
+
+    <!-- Neck -->
+    <rect x="60" y="125" width="18" height="25" rx="4" fill="url(#skinBoy)" />
+
+    <!-- Face / Head -->
+    <path d="M 40,80 Q 69,65 98,80 Q 102,125 69,140 Q 36,125 40,80 Z" fill="url(#skinBoy)" />
+    <!-- Anime Blush -->
+    <ellipse cx="50" cy="112" rx="7" ry="3.5" fill="#f87171" opacity="0.6" />
+    <ellipse cx="88" cy="112" rx="7" ry="3.5" fill="#f87171" opacity="0.6" />
+    <!-- Big Sparkling Anime Eyes -->
+    <ellipse cx="53" cy="98" rx="8" ry="11" fill="#0f172a" />
+    <ellipse cx="85" cy="98" rx="8" ry="11" fill="#0f172a" />
+    <ellipse cx="51" cy="95" rx="3.5" ry="5" fill="#38bdf8" />
+    <ellipse cx="83" cy="95" rx="3.5" ry="5" fill="#38bdf8" />
+    <circle cx="54" cy="93" r="2.5" fill="#ffffff" />
+    <circle cx="86" cy="93" r="2.5" fill="#ffffff" />
+    <circle cx="51" cy="102" r="1.5" fill="#ffffff" />
+    <circle cx="83" cy="102" r="1.5" fill="#ffffff" />
+    <!-- Eyebrows -->
+    <path d="M 46,84 Q 54,78 62,84" stroke="#1c130d" stroke-width="2.5" stroke-linecap="round" fill="none" />
+    <path d="M 76,84 Q 84,78 92,84" stroke="#1c130d" stroke-width="2.5" stroke-linecap="round" fill="none" />
+    <!-- Cheerful Open Anime Smile -->
+    <path d="M 60,118 Q 69,132 78,118 Z" fill="#e11d48" stroke="#be123c" stroke-width="1.5" />
+    <path d="M 63,120 Q 69,124 75,120" fill="#ffffff" />
+
+    <!-- Spiky Anime Hair under cap -->
+    <path d="M 38,82 Q 30,95 38,105 Q 42,95 40,82 Z" fill="url(#hairBoy)" />
+    <path d="M 98,82 Q 108,95 98,105 Q 94,95 98,82 Z" fill="url(#hairBoy)" />
+    <!-- Front hair bangs -->
+    <path d="M 48,78 Q 55,90 60,78 Q 68,92 75,78 Q 82,90 88,78 Z" fill="url(#hairBoy)" />
+
+    <!-- Delivery Cap (Boné do Entregador) -->
+    <!-- Cap Dome -->
+    <path d="M 36,78 Q 69,38 102,78 Z" fill="#0284c7" stroke="#0369a1" stroke-width="2" />
+    <!-- Green Visor (Aba Verde) -->
+    <path d="M 34,76 Q 72,66 116,74 Q 106,86 42,86 Z" fill="#10b981" stroke="#059669" stroke-width="2" />
+    <!-- Flame Logo on Cap -->
+    <circle cx="69" cy="60" r="7" fill="#ffffff" />
+    <path d="M 69,55 Q 72,59 70,63 Q 69,65 67,63 Q 66,60 69,55 Z" fill="#f97316" />
+  </g>
+
+  <!-- SPARKLES / STARS (ANIME SHINE EFFECT) -->
+  <g fill="#fef08a" opacity="0.9">
+    <path d="M 430,340 Q 435,345 440,345 Q 435,345 430,350 Q 435,345 430,340 Z" />
+    <path d="M 525,370 Q 530,375 535,375 Q 530,375 525,380 Q 530,375 525,370 Z" />
+    <path d="M 370,260 Q 375,265 380,265 Q 375,265 370,270 Q 375,265 370,260 Z" />
+  </g>
+
+  <!-- FLOATING ANIME BADGE -->
+  <g transform="translate(620, 485)" filter="url(#softShadow)">
+    <rect x="0" y="0" width="220" height="60" rx="14" fill="#ffffff" stroke="#10b981" stroke-width="2" />
+    <circle cx="32" cy="30" r="18" fill="#10b981" />
+    <path d="M 24,30 L 30,36 L 40,24" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <text x="60" y="27" font-family="sans-serif" font-size="13" font-weight="bold" fill="#0f172a">Entrega Rápida</text>
+    <text x="60" y="44" font-family="sans-serif" font-size="11" font-weight="normal" fill="#64748b">Botijão P13 na porta!</text>
+  </g>
+</svg>

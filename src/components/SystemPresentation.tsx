@@ -30,7 +30,7 @@ export const SystemPresentation: React.FC<SystemPresentationProps> = ({ onOpenTr
   return (
     <section id="demonstracao" className="py-16 sm:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Cabeçalho da Seção Conforme Imagem de Referência */}
+        {/* Cabeçalho da Seção */}
         <div className="text-center max-w-3xl mx-auto mb-14">
           <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
             Interface e Recursos Reais
@@ -43,68 +43,84 @@ export const SystemPresentation: React.FC<SystemPresentationProps> = ({ onOpenTr
           </p>
         </div>
 
-        {/* 4 Imagens Reais de Revenda de Gás (Estoque, Entregador, Fogão, Transporte) */}
+        {/* ── 4 CARDS EM ANIMAÇÃO COLORIDA NA ORDEM SOLICITADA ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {/* 1. ESTOQUE DE GÁS */}
           <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs group hover:border-emerald-300 transition-all">
-            <div className="aspect-[16/10] overflow-hidden bg-slate-100">
+            <div className="aspect-[16/10] overflow-hidden bg-slate-50">
               <img
-                src="/images/deposito-botijoes.jpg"
-                alt="Depósito de botijões de gás organizado em gaiolas"
+                src="/images/estoque-gas-anime.svg"
+                alt="Estoque de gás organizado com botijões em gaiolas"
                 className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
               />
             </div>
             <div className="p-4">
-              <h4 className="font-bold text-sm text-[#0d1b2e]">Depósito de Botijões</h4>
+              <span className="text-[10px] font-black uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                1. Depósito
+              </span>
+              <h4 className="font-bold text-sm text-[#0d1b2e] mt-1.5">Estoque de Gás</h4>
               <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                Controle o estoque de botijões cheios e vazios da sua revenda com alerta de nível mínimo.
+                Controle o saldo de botijões cheios e vazios da sua revenda em tempo real, com alerta de reposição de carga.
               </p>
             </div>
           </div>
 
+          {/* 2. ENTREGADOR UNIFORMIZADO COM BOTIJÃO NOS OMBROS */}
           <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs group hover:border-emerald-300 transition-all">
-            <div className="aspect-[16/10] overflow-hidden bg-slate-100">
+            <div className="aspect-[16/10] overflow-hidden bg-slate-50">
               <img
-                src="/images/entregador-botijao.jpg"
-                alt="Entregador uniformizado carregando botijão de gás para entrega"
-                className="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-300"
-              />
-            </div>
-            <div className="p-4">
-              <h4 className="font-bold text-sm text-[#0d1b2e]">Entrega de Botijões</h4>
-              <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                Despache pedidos rapidamente para os entregadores e acompanhe os status em tempo real.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs group hover:border-emerald-300 transition-all">
-            <div className="aspect-[16/10] overflow-hidden bg-slate-100">
-              <img
-                src="/images/fogao-cozinha.jpg"
-                alt="Fogão a gás aceso com chama azul na cozinha do cliente"
+                src="/images/entregador-ombros-anime.svg"
+                alt="Entregador uniformizado carregando botijão de gás nos ombros"
                 className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
               />
             </div>
             <div className="p-4">
-              <h4 className="font-bold text-sm text-[#0d1b2e]">Gás Sempre Aceso</h4>
+              <span className="text-[10px] font-black uppercase tracking-wider text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
+                2. Entrega Rápida
+              </span>
+              <h4 className="font-bold text-sm text-[#0d1b2e] mt-1.5">Entregador com Botijão</h4>
               <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                Identifique clientes há mais de 60 dias sem comprar e ligue no momento exato antes de acabar o gás.
+                Despache botijões com rapidez para os entregadores e acompanhe as rotas no Waze e Maps pelo celular.
               </p>
             </div>
           </div>
 
+          {/* 3. ATENDENTE LIGANDO PARA O CLIENTE */}
           <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs group hover:border-emerald-300 transition-all">
-            <div className="aspect-[16/10] overflow-hidden bg-slate-100">
+            <div className="aspect-[16/10] overflow-hidden bg-slate-50">
               <img
-                src="/images/entrega-caminhao-gas.jpg"
-                alt="Carga e transporte de botijões de gás para revenda"
+                src="/images/atendente-cliente-anime.svg"
+                alt="Atendente de revenda ligando para o cliente para reativar pedido de gás"
                 className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
               />
             </div>
             <div className="p-4">
-              <h4 className="font-bold text-sm text-[#0d1b2e]">Carga &amp; Logística</h4>
+              <span className="text-[10px] font-black uppercase tracking-wider text-rose-700 bg-rose-50 px-2 py-0.5 rounded border border-rose-200">
+                3. Clientes (+60d)
+              </span>
+              <h4 className="font-bold text-sm text-[#0d1b2e] mt-1.5">Atendente Ligando</h4>
               <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                Controle a entrada de novas cargas de botijões e mantenha a operação rodando sem gargalos.
+                Identifique clientes que estão há mais de 60 dias sem comprar e ligue no momento exato antes de acabar o gás.
+              </p>
+            </div>
+          </div>
+
+          {/* 4. CONTROLE DE CONTAS A PAGAR E FLUXO DE CAIXA */}
+          <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs group hover:border-emerald-300 transition-all">
+            <div className="aspect-[16/10] overflow-hidden bg-slate-50">
+              <img
+                src="/images/fluxo-caixa-anime.svg"
+                alt="Controle financeiro de contas a pagar e fluxo de caixa da revenda de gás"
+                className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
+              />
+            </div>
+            <div className="p-4">
+              <span className="text-[10px] font-black uppercase tracking-wider text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
+                4. Financeiro
+              </span>
+              <h4 className="font-bold text-sm text-[#0d1b2e] mt-1.5">Contas e Fluxo de Caixa</h4>
+              <p className="text-xs text-slate-500 mt-1 leading-relaxed">
+                Controle entradas, saídas, fechamento cego de turno e garanta que nenhuma conta fique vencida.
               </p>
             </div>
           </div>
