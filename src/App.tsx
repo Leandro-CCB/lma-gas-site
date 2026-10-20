@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { FeaturesStrip } from './components/FeaturesStrip';
-import { BrandsBar } from './components/BrandsBar';
 import { SystemPresentation } from './components/SystemPresentation';
 import { PricingSection } from './components/PricingSection';
 import { FaqSection } from './components/FaqSection';
@@ -36,10 +35,7 @@ export default function App() {
         {/* 3. Faixa de 4 Funcionalidades Principais */}
         <FeaturesStrip />
 
-        {/* 4. Marcas e Distribuidoras Homologadas */}
-        <BrandsBar />
-
-        {/* 5. Apresentação do Sistema: Fotos Operacionais e Telas Reais */}
+        {/* 4. Apresentação do Sistema: Fotos Operacionais e Telas Reais */}
         <SystemPresentation onOpenTrial={handleOpenTrial} />
 
         {/* 6. Planos e Preços (Exclusivamente R$ 49,99 e R$ 99,99) + Seção de Confiança */}
