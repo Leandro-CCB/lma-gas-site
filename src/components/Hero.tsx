@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, CheckCircle2, Play, Sparkles, Package, Zap, Users } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Play, Sparkles, Package, Zap, Users, ShieldCheck } from 'lucide-react';
 import { HERO_DATA } from '../data/content';
 
 interface HeroProps {
@@ -65,18 +65,33 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
             </div>
           </div>
 
-          {/* Lado Direito: Foto Real de Entregador Deixando o Gás para a Cliente */}
+          {/* Lado Direito: Imagem do Caminhão de Transporte de Botijões Conforme Referência Enviada */}
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
-              <div className="relative rounded-3xl bg-slate-50 p-3 border border-slate-200 shadow-lg overflow-hidden">
-                <img
-                  src="/images/hero-entrega-real.jpg"
-                  alt="Entregador uniformizado entregando botijão de gás para a cliente na residência"
-                  className="w-full h-auto object-cover rounded-2xl max-h-[380px]"
-                />
+              {/* Badge Superior Flutuante: Mais gás, mais clientes, mais vendas! */}
+              <div className="absolute -top-3.5 right-3 z-10 bg-white px-3.5 py-1.5 rounded-full border border-slate-200 shadow-md flex items-center gap-2">
+                <span className="size-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="text-xs font-bold text-[#0d1b2e]">
+                  Mais gás, mais clientes, mais vendas!
+                </span>
+              </div>
 
-                {/* Badges Flutuantes Informativos */}
-                <div className="mt-3 grid grid-cols-3 gap-2 pt-2 border-t border-slate-200">
+              {/* Moldura da Imagem Real com Cantos Arredondados e Sombra */}
+              <div className="relative rounded-3xl bg-slate-50 p-3 border border-slate-200 shadow-lg overflow-hidden">
+                <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-100">
+                  <img
+                    src="/images/entrega-caminhao-gas.jpg"
+                    alt="Caminhão carregado com botijões de gás para entrega e logística da revenda"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute bottom-3 left-3 right-3 text-white text-xs font-semibold drop-shadow-sm">
+                    Carga e logística de botijões sempre sob controle
+                  </div>
+                </div>
+
+                {/* 4 Badges Conforme Referência Exata da Imagem Enviada */}
+                <div className="mt-3 grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2 border-t border-slate-200">
                   <div className="bg-white p-2 rounded-xl border border-slate-200 text-center shadow-xs">
                     <Package className="size-4 text-emerald-600 mx-auto mb-1" />
                     <span className="block text-[11px] font-bold text-[#0d1b2e]">Mais Controle</span>
@@ -93,6 +108,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                     <Users className="size-4 text-emerald-600 mx-auto mb-1" />
                     <span className="block text-[11px] font-bold text-[#0d1b2e]">Clientes Fiéis</span>
                     <span className="block text-[9px] text-slate-500">Sem atrasos</span>
+                  </div>
+
+                  <div className="bg-white p-2 rounded-xl border border-slate-200 text-center shadow-xs">
+                    <ShieldCheck className="size-4 text-amber-600 mx-auto mb-1" />
+                    <span className="block text-[11px] font-bold text-[#0d1b2e]">Segurança Total</span>
+                    <span className="block text-[9px] text-slate-500">Dados seguros</span>
                   </div>
                 </div>
               </div>

@@ -14,7 +14,7 @@ export const DISTRIBUIDORAS = [
 ];
 
 export const HERO_DATA = {
-  badge: "Sistema para Revendas de Gás",
+  badge: "Sistema para Revenda de Gás",
   title: "Sua revenda de gás mais organizada, do pedido à entrega.",
   description: "Controle vendas, entregas, estoque e clientes em um só lugar. Simples de usar, direto ao ponto.",
   ctaPrimary: "Testar 7 Dias Grátis",
