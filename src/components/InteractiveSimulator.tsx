@@ -287,11 +287,8 @@ export const InteractiveSimulator: React.FC<InteractiveSimulatorProps> = ({ onOp
   };
 
   // 4. AÇÃO: Conferir Caixa Cego
-  const handleConferirCaixa = (e: React.FormEvent) => {
-    e.preventDefault();
-    const contado = parseFloat(caixaContadoInput.replace(/\./g, '').replace(',', '.')) || 0;
-    const diferenca = contado - saldoCaixa;
-
+  const executarConferencia = (valorContado: number) => {
+    const diferenca = valorContado - saldoCaixa;
     if (Math.abs(diferenca) < 0.01) {
       setCaixaResultado({
         conferido: true,
@@ -311,6 +308,12 @@ export const InteractiveSimulator: React.FC<InteractiveSimulatorProps> = ({ onOp
         mensagem: `ℹ️ Sobra de R$ ${diferenca.toFixed(2).replace('.', ',')} na contagem física em relação ao sistema.`
       });
     }
+  };
+
+  const handleConferirCaixa = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    const contado = parseFloat(caixaContadoInput.replace(/\./g, '').replace(',', '.')) || 0;
+    executarConferencia(contado);
   };
 
   // 5. AÇÃO: Reiniciar Simulação
@@ -1200,14 +1203,23 @@ export const InteractiveSimulator: React.FC<InteractiveSimulatorProps> = ({ onOp
                     <div className="flex gap-2 pt-1 text-[11px]">
                       <button
                         type="button"
-                        onClick={() => setCaixaContadoInput(saldoCaixa.toFixed(2).replace('.', ','))}
+                        onClick={() => {
+                          const valStr = saldoCaixa.toFixed(2).replace('.', ',');
+                          setCaixaContadoInput(valStr);
+                          executarConferencia(saldoCaixa);
+                        }}
                         className="text-emerald-700 font-semibold hover:underline cursor-pointer"
                       >
                         [ Preencher valor exato R$ {saldoCaixa.toFixed(2).replace('.', ',')} ]
                       </button>
                       <button
                         type="button"
-                        onClick={() => setCaixaContadoInput((saldoCaixa - 20).toFixed(2).replace('.', ','))}
+                        onClick={() => {
+                          const quebra = saldoCaixa - 20;
+                          const valStr = quebra.toFixed(2).replace('.', ',');
+                          setCaixaContadoInput(valStr);
+                          executarConferencia(quebra);
+                        }}
                         className="text-rose-600 font-semibold hover:underline cursor-pointer"
                       >
                         [ Simular quebra de R$ 20,00 ]
