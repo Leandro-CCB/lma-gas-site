@@ -65,52 +65,42 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
             </div>
           </div>
 
-          {/* Lado Direito: Imagem do Caminhão de Transporte de Botijões Conforme Referência Enviada */}
+          {/* Lado Direito: Card Oficial com a Imagem Completa (Sem Cortes) e os 4 Badges */}
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
-              {/* Badge Superior Flutuante: Mais gás, mais clientes, mais vendas! */}
-              <div className="absolute -top-3.5 right-3 z-10 bg-white px-3.5 py-1.5 rounded-full border border-slate-200 shadow-md flex items-center gap-2">
-                <span className="size-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-xs font-bold text-[#0d1b2e]">
-                  Mais gás, mais clientes, mais vendas!
-                </span>
-              </div>
-
-              {/* Moldura da Imagem Real com Cantos Arredondados e Sombra */}
-              <div className="relative rounded-3xl bg-slate-50 p-3 border border-slate-200 shadow-lg overflow-hidden">
-                <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-100">
+              {/* Moldura com Cantos Arredondados e Sombra */}
+              <div className="rounded-3xl bg-slate-50 p-3 sm:p-4 border border-slate-200 shadow-xl overflow-hidden">
+                {/* Imagem do Caminhão com Proporção Natural e 100% Visível */}
+                <div className="rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-xs">
                   <img
                     src="/images/entrega-caminhao-gas.jpg"
-                    alt="Caminhão carregado com botijões de gás para entrega e logística da revenda"
-                    className="w-full h-full object-cover"
+                    alt="LMA Gás - Mais gás, mais clientes, mais vendas! Caminhão de distribuição e entrega de botijões"
+                    className="w-full h-auto block"
+                    loading="eager"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-                  <div className="absolute bottom-3 left-3 right-3 text-white text-xs font-semibold drop-shadow-sm">
-                    Carga e logística de botijões sempre sob controle
-                  </div>
                 </div>
 
-                {/* 4 Badges Conforme Referência Exata da Imagem Enviada */}
-                <div className="mt-3 grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2 border-t border-slate-200">
-                  <div className="bg-white p-2 rounded-xl border border-slate-200 text-center shadow-xs">
+                {/* 4 Badges Conforme Referência Exata */}
+                <div className="mt-3 grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 border-t border-slate-200">
+                  <div className="bg-white p-2.5 rounded-xl border border-slate-200 text-center shadow-xs">
                     <Package className="size-4 text-emerald-600 mx-auto mb-1" />
                     <span className="block text-[11px] font-bold text-[#0d1b2e]">Mais Controle</span>
                     <span className="block text-[9px] text-slate-500">Estoque em dia</span>
                   </div>
 
-                  <div className="bg-white p-2 rounded-xl border border-slate-200 text-center shadow-xs">
+                  <div className="bg-white p-2.5 rounded-xl border border-slate-200 text-center shadow-xs">
                     <Zap className="size-4 text-blue-600 mx-auto mb-1" />
                     <span className="block text-[11px] font-bold text-[#0d1b2e]">Mais Agilidade</span>
                     <span className="block text-[9px] text-slate-500">Rotas rápidas</span>
                   </div>
 
-                  <div className="bg-white p-2 rounded-xl border border-slate-200 text-center shadow-xs">
+                  <div className="bg-white p-2.5 rounded-xl border border-slate-200 text-center shadow-xs">
                     <Users className="size-4 text-emerald-600 mx-auto mb-1" />
                     <span className="block text-[11px] font-bold text-[#0d1b2e]">Clientes Fiéis</span>
                     <span className="block text-[9px] text-slate-500">Sem atrasos</span>
                   </div>
 
-                  <div className="bg-white p-2 rounded-xl border border-slate-200 text-center shadow-xs">
+                  <div className="bg-white p-2.5 rounded-xl border border-slate-200 text-center shadow-xs">
                     <ShieldCheck className="size-4 text-amber-600 mx-auto mb-1" />
                     <span className="block text-[11px] font-bold text-[#0d1b2e]">Segurança Total</span>
                     <span className="block text-[9px] text-slate-500">Dados seguros</span>
