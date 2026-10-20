@@ -30,106 +30,52 @@ export const SystemPresentation: React.FC<SystemPresentationProps> = ({ onOpenTr
   return (
     <section id="demonstracao" className="py-14 sm:py-20 bg-white scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Cabeçalho da Seção */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
-            Operação Prática de Revenda
-          </span>
-          <h2 className="text-2xl sm:text-4xl font-black text-[#0d1b2e] mt-3 tracking-tight">
-            Tudo o que sua revenda precisa em um só lugar.
-          </h2>
-          <p className="mt-2.5 text-base text-slate-600 leading-relaxed font-normal">
-            Um sistema completo, fácil de usar e desenvolvido especialmente para a realidade das revendas de gás e água mineral.
-          </p>
-        </div>
-
-        {/* ── 4 CARDS COM PESSOAS E FOTOS REAIS NA ORDEM SOLICITADA PELO CHEFE ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {/* 1. ESTOQUE DE GÁS (PESSOA COM PRANCHETA CONTANDO O ESTOQUE DE BOTIJÕES) */}
-          <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-md hover:border-emerald-300 transition-all flex flex-col justify-between">
-            <div className="aspect-[4/3] bg-slate-100 overflow-hidden relative">
-              <img
-                src="/images/card-1-estoque-real.jpg"
-                alt="Pessoa com prancheta contando o estoque de botijões de gás no depósito"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <span className="absolute top-3 left-3 text-[10px] font-black uppercase tracking-wider text-white bg-emerald-700/90 backdrop-blur-xs px-2.5 py-1 rounded-md shadow-xs">
-                1. Depósito
-              </span>
-            </div>
-            <div className="p-4 flex-1 flex flex-col justify-between">
-              <div>
-                <h4 className="font-bold text-sm text-[#0d1b2e]">Estoque de Gás</h4>
-                <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                  Controle físico de botijões cheios e vazios (P13, P20, P45) e galões com alerta de reposição de carga.
-                </p>
-              </div>
-            </div>
+        {/* Banner Oficial do Sistema Completo para Revenda de Gás enviado pelo Chefe */}
+        <div className="mb-14 sm:mb-16">
+          {/* Exibição em telas desktop e tablets: Banner Completo em Alta Definição */}
+          <div className="hidden sm:block">
+            <img
+              src="/images/banner-sistema-completo-gas.jpg"
+              alt="Sistema Completo para Revenda de Gás - Mais controle, agilidade e lucro para o seu negócio"
+              className="w-full h-auto rounded-2xl shadow-sm border border-slate-200"
+              loading="eager"
+            />
           </div>
 
-          {/* 2. ENTREGADOR COM MOTO, BOTIJÃO NO OMBRO E CLIENTE COM DINHEIRO */}
-          <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-md hover:border-emerald-300 transition-all flex flex-col justify-between">
-            <div className="aspect-[4/3] bg-slate-100 overflow-hidden relative">
-              <img
-                src="/images/card-2-entregador-real.jpg"
-                alt="Entregador com moto com botijão de gás no ombro e cliente com dinheiro na mão"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <span className="absolute top-3 left-3 text-[10px] font-black uppercase tracking-wider text-white bg-blue-700/90 backdrop-blur-xs px-2.5 py-1 rounded-md shadow-xs">
-                2. Entrega Ágil
+          {/* Exibição em dispositivos móveis: Cards Individuais da Própria Imagem perfeitamente legíveis */}
+          <div className="sm:hidden space-y-4">
+            <div className="text-center px-1 mb-3">
+              <span className="text-[10px] font-black uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                Sistema Completo para Revenda de Gás
               </span>
+              <h2 className="text-lg font-black text-[#0d1b2e] mt-2 leading-tight">
+                Mais controle, agilidade e lucro para o seu negócio
+              </h2>
+              <p className="mt-1 text-xs text-slate-600 leading-relaxed">
+                Do pedido à entrega, tudo em um só lugar. Gerencie sua revenda de gás com tecnologia, segurança e praticidade.
+              </p>
             </div>
-            <div className="p-4 flex-1 flex flex-col justify-between">
-              <div>
-                <h4 className="font-bold text-sm text-[#0d1b2e]">Entregador com Botijão</h4>
-                <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                  Despache pedidos rapidamente para os entregadores com rotas no Waze/Maps e baixa de pagamentos no celular.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* 3. ATENDENTE LIGANDO PARA O CLIENTE */}
-          <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-md hover:border-emerald-300 transition-all flex flex-col justify-between">
-            <div className="aspect-[4/3] bg-slate-100 overflow-hidden relative">
+            <div className="space-y-3">
               <img
-                src="/images/card-3-atendente-real.jpg"
-                alt="Atendente de suporte da revenda com headset ligando para clientes inativos"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                src="/images/card-banner-1.jpg"
+                alt="1. Depósito - Controle total do estoque"
+                className="w-full h-auto rounded-xl shadow-xs border border-slate-200"
               />
-              <span className="absolute top-3 left-3 text-[10px] font-black uppercase tracking-wider text-white bg-rose-700/90 backdrop-blur-xs px-2.5 py-1 rounded-md shadow-xs">
-                3. Clientes Inativos (+60d)
-              </span>
-            </div>
-            <div className="p-4 flex-1 flex flex-col justify-between">
-              <div>
-                <h4 className="font-bold text-sm text-[#0d1b2e]">Atendente Ligando</h4>
-                <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                  Identifique clientes sem comprar há mais de 60 e 90 dias e ligue ou chame no WhatsApp antes do gás acabar.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* 4. CONTROLE DE CONTAS A PAGAR E FLUXO DE CAIXA */}
-          <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-md hover:border-emerald-300 transition-all flex flex-col justify-between">
-            <div className="aspect-[4/3] bg-slate-100 overflow-hidden relative">
               <img
-                src="/images/card-4-financeiro-real.jpg"
-                alt="Gestor financeiro acompanhando contas a pagar e fluxo de caixa da revenda"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                src="/images/card-banner-2.jpg"
+                alt="2. Entrega Ágil - Entregas mais rápidas e organizadas"
+                className="w-full h-auto rounded-xl shadow-xs border border-slate-200"
               />
-              <span className="absolute top-3 left-3 text-[10px] font-black uppercase tracking-wider text-white bg-amber-700/90 backdrop-blur-xs px-2.5 py-1 rounded-md shadow-xs">
-                4. Financeiro
-              </span>
-            </div>
-            <div className="p-4 flex-1 flex flex-col justify-between">
-              <div>
-                <h4 className="font-bold text-sm text-[#0d1b2e]">Contas e Fluxo de Caixa</h4>
-                <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                  Monitore entradas, saídas, fechamento cego de turno e garanta que nenhuma conta da distribuidora atrase.
-                </p>
-              </div>
+              <img
+                src="/images/card-banner-3.jpg"
+                alt="3. Clientes Inativos (+60D) - Reative seus clientes e aumente suas vendas"
+                className="w-full h-auto rounded-xl shadow-xs border border-slate-200"
+              />
+              <img
+                src="/images/card-banner-4.jpg"
+                alt="4. Financeiro - Contas e fluxo de caixa"
+                className="w-full h-auto rounded-xl shadow-xs border border-slate-200"
+              />
             </div>
           </div>
         </div>
