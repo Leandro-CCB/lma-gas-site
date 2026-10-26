@@ -733,58 +733,10 @@ export const InteractiveSimulator: React.FC<SimulatorProps> = ({ onOpenTrial }) 
   ];
 
   return (
-    <section id="inicio" className="relative pt-6 pb-16 sm:pt-10 sm:pb-24 bg-gradient-to-b from-[#0d1b2e] via-[#102138] to-[#f8fafc] overflow-hidden">
-      {/* Glow decorativo vivo no fundo do Hero */}
-      <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[900px] h-[380px] bg-emerald-500/15 blur-[130px] rounded-full" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Bloco Hero Principal */}
-        <div className="text-center max-w-4xl mx-auto mb-8 sm:mb-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 text-xs font-bold mb-4 shadow-sm">
-            <Flame className="size-3.5 text-amber-400" />
-            <span>Sistema Oficial para Distribuidoras de Gás e Água • Teste Ao Vivo Abaixo</span>
-          </div>
-
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.08]">
-            Controle sua Revenda de <span className="text-emerald-400">Gás e Água</span> do Pedido à Entrega
-          </h1>
-
-          <p className="mt-4 text-sm sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            PDV rápido em 3 cliques, estoque de botijões, despacho de motoboys com rota no Waze, alerta de clientes sumidos há +60 dias, Cardápio Digital e financeiro completo.
-          </p>
-
-          <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <button
-              onClick={onOpenTrial}
-              className="w-full sm:w-auto px-7 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-[#071521] font-black text-sm sm:text-base shadow-xl shadow-emerald-500/25 flex items-center justify-center gap-2 transition-all cursor-pointer"
-            >
-              <Sparkles className="size-4" />
-              <span>Criar Conta Grátis (7 Dias Reais)</span>
-              <ArrowRight className="size-4" />
-            </button>
-
-            <a
-              href="#demonstracao"
-              className="w-full sm:w-auto px-6 py-4 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all"
-            >
-              <Eye className="size-4 text-emerald-400" />
-              <span>Testar o Sistema Ao Vivo Agora</span>
-            </a>
-
-            <a
-              href="https://gas.lmaapp.com.br/login"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto px-5 py-4 rounded-xl bg-slate-900/70 hover:bg-slate-900 border border-slate-700 text-slate-200 font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 transition-all"
-            >
-              <span>Já sou cliente (Login)</span>
-              <ExternalLink className="size-3.5 text-emerald-400" />
-            </a>
-          </div>
-        </div>
-
+    <div className="w-full">
+      <div>
         {/* Barra de Régua de Módulos (Ruler Style: todas as abas visíveis, contraste forte na aba ativa) */}
-        <div id="demonstracao" className="scroll-mt-24 mb-4">
+        <div className="mb-4">
           <div className="bg-[#0a1524]/95 border border-slate-700/80 rounded-2xl p-3 sm:p-4 shadow-2xl">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 mb-3 border-b border-slate-800">
               <div className="flex items-center gap-2">
@@ -2607,6 +2559,6 @@ export const InteractiveSimulator: React.FC<SimulatorProps> = ({ onOpenTrial }) 
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
